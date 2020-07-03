@@ -1,0 +1,19 @@
+@media screen and (max-width:768px) {
+    .list-container {
+        display: none;
+    }
+    .anfitrion {
+        flex-direction: column;
+    }
+    
+    .anfitrion-info {
+        width: 85%;
+        margin: 20px 15px;
+        align-self: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+    }
+}

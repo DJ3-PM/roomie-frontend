@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    height: 50px;
+}
+
+.footer a {
+    margin-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.footer a::before {
+    content: '·';
+}
