@@ -14,50 +14,7 @@ main {
     margin: 30px auto;
 }
 
-.button {
-    justify-self: start;
-    background: #c3d233;
-    outline: none;
-    padding: 10px 20px;
-    border: none;
-}
-
-.button:hover {
-    font-weight: bold;
-}
-
-.button-left {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-}
-
-.button-right {
-    position: absolute;
-    top: 50%;
-    right: 20%;
-}
-
-.button-left__img, .button-right__img {
-    width: 50px;
-    height: 50px;
-}
-
-.button-left button, .button-right button {
-    border: none;
-    background: transparent;
-    outline: none;
-}
-
-.button-left button:hover, .button-right button:hover {
-    cursor: pointer;
-    transform: scale(1.3);
-}
-
-.button-left__next {
-    transform: translateX(0);
-}
-
+ /* ------------------------- ESTILOS DEL HEADER -------------------------- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -109,6 +66,8 @@ main {
     border-top: 2px solid #c3d233;
 }
 
+/* ------------------------- ESTILOS DEL CARRUSEL -------------------------- */
+
 .carousel {
     display: flex;
     flex-direction: column;
@@ -131,6 +90,7 @@ main {
     object-fit: cover;
 }
 
+/* ------------------------- ESTILOS DE LA LISTA DE IMAGENES -------------------------- */
 .list-container {
     margin-top: 20px;
     display: flex;
@@ -149,6 +109,8 @@ main {
     height: 120px;
     object-fit: cover;
 }
+
+/* ------------------------- ESTILOS DE LA SECCION DEL ANFITRION -------------------------- */
 
 .anfitrion {
     display: flex;
@@ -187,6 +149,8 @@ main {
     margin-left: 40px;
 }
 
+/* ------------------------- ESTILOS DE LA DESCRIPCION DEL ROOM -------------------------- */
+
 .description-room__info,
 .description-room__space,
 .description-room__huesped {
@@ -196,6 +160,8 @@ main {
 .description-room p {
     line-height: 1.5;
 }
+
+/* ------------------------- ESTILOS DEL FOOTER -------------------------- */
 
 .footer {
     display: flex;
@@ -215,6 +181,55 @@ main {
     content: '·';
 }
 
+/* ------------------------- ESTILOS DEL BOTON CONTACTAR -------------------------- */
+
+.button {
+    justify-self: start;
+    background: #c3d233;
+    outline: none;
+    padding: 10px 20px;
+    border: none;
+}
+
+.button:hover {
+    font-weight: bold;
+}
+
+/* ------------------------- ESTILOS DE LOS BOTONES LEFT Y RIGHT DEL CARRUSEL -------------------------- */
+
+.button-left {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+.button-right {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+}
+
+.button-left__img, .button-right__img {
+    width: 50px;
+    height: 50px;
+}
+
+.button-left button, .button-right button {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.button-left button:hover, .button-right button:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.button-left__next {
+    transform: translateX(0);
+}
+
+/* ------------------------- MEDIA QUERIES -------------------------- */
 @media screen and (max-width: 768px) {
     .list-container {
         display: none;

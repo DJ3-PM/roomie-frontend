@@ -14,6 +14,7 @@ main {
     max-width: 800px;
 }
 
+/* ------------------------- ESTILOS DEL HEADER -------------------------- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -65,6 +66,8 @@ main {
     border-top: 2px solid #c3d233;
 }
 
+/* ------------------------- ESTILOS DE LA GALERIA DE IMAGENES -------------------------- */
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -87,6 +90,8 @@ main {
     object-fit: cover;
 }
 
+/* ------------------------- ESTILOS DE SECCION DE SERVICIOS DEL ROOM -------------------------- */
+
 .services {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -104,6 +109,7 @@ main {
     padding: 10px;
 }
 
+/* ------------------------- ESTILOS DE LA DESCRIPCION DEL ROOM -------------------------- */
 .description {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -146,6 +152,7 @@ main {
     resize: none;
 }
 
+/* ------------------------- ESTILOS DEL FOOTER -------------------------- */
 .footer {
     display: flex;
     justify-content: center;
@@ -164,6 +171,7 @@ main {
     content: '·';
 }
 
+/* ------------------------- ESTILOS DEL BOTON PUBLICAR-------------------------- */
 .button {
     justify-self: start;
     background: #c3d233;
@@ -175,6 +183,8 @@ main {
 .button:hover {
     font-weight: bold;
 }
+
+/* ------------------------- MEDIA QUERIES -------------------------- */
 
 @media screen and (max-width: 768px) {
     main {
