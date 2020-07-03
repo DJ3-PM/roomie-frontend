@@ -17,3 +17,12 @@
         height: auto;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .search{
+        width: 450px;
+    }
+    article{
+        margin-bottom: 70px;
+    }
+}
