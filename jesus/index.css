@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.hero{
+    background-image: url('img/bg-hero.jpg');
+    background-position: center;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+.signup{
+    background-color: #C3D32A;
+    padding: 10px 19px;
+    border: none;
+}
+footer{
+    background: #F7F7F7;
+    color: black;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+}
+li{
+    list-style: none;
+    margin-right: 10px;
+}
+nav{
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+}
+.item{
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input h2{
+    margin-top: 60px;
+}
+input[type="search"]{
+    color: black;
+    padding: 20px;
+}
+
+.container__search{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.search{
+    width: 800px;
+    height: 55px;
+    opacity: .7;
+    margin-bottom: 25px;
+    background-image: url(../app/assets/icon/search.svg);
+    border: none;
+}
+.container-cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 100px;
+}
+.like{
+    position: absolute;
+}
+.subtitle{
+    display: flex;
+    justify-content: center;
+    margin: 70px;
+}
+article{
+    position: relative;
+}
+.like{
+    right: 0;
+}
+
+
+/* home */
+
+
+/* /////////////// */
+
+
+/* register */
+
+
+
+.form{
+    display: flex;
+    background: #F7F7F7;
+    padding: 40px;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+}
+.container__form__all{
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.container__form{ 
+    display: flex;
+    justify-content: center;
+}
+.input__form{
+    margin: 10px;
+    border: none;
+    height: 40px;
+    padding-left: 19px;
+}
+
+@media only screen and (max-width: 600px) {
+    .search{
+        width: 450px;
+    }
+    article{
+        margin-bottom: 70px;
+    }
+    footer{
+        text-align: center;
+    }
+}
