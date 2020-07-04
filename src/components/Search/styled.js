@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import heroBackground from '../../assets/static/bg-hero.jpg';
+import searchIcon from '../../assets/static/search.svg';
 
 export const Hero = styled.div`
-    background-image: url('../../static/bg-hero.jpg');
+    background-image: url(${heroBackground});
     background-position: center;
     height: 60vh;
     background-repeat: no-repeat;
@@ -25,6 +27,6 @@ export const SearchItem = styled.input`
     height: 55px;
     opacity: .7;
     margin-bottom: 25px;
-    background-image: url(../app/assets/icon/search.svg);
+    background-image: url(${searchIcon});
     border: none;
 `;

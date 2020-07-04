@@ -1,11 +1,11 @@
 import React from 'react';
-import '../assets/styles/components/Place.scss';
+import { CardsContainer } from './styles';
 
 const Place = ({ children }) => (
 
-  <div className='container-cards'>
+  <CardsContainer>
     {children}
-  </div>
+  </CardsContainer>
 );
 
 export default Place;
