@@ -17,13 +17,16 @@ export const HostInfo = styled.section`
 
 export const HostInfoDetails = styled.div`
      display: flex;
+     flex-direction: column;
+     align-items: center;
      margin: 15px;
      width: 250px;
  `;
 
-export const HostInfoImg = styled.div`
-     width: 25px;
-     height: 25px;
+export const HostInfoImg = styled.img`
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
  `;
 
 export const HostServices = styled.div`
@@ -42,7 +45,7 @@ export const HostServicesDetails = styled.div`
      width: 250px;
  `;
 
-export const HostServicesImg = styled.div`
+export const HostServicesImg = styled.img`
      width: 25px;
      height: 25px;
  `;
