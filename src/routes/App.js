@@ -1,21 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router } from '@reach/router';
 import Home from '../containers/Home';
 import Login from '../containers/Signin';
-import Register from '../containers/Signup';
+import Signup from '../containers/Signup';
 import CreatePlace from '../containers/CreatePlace';
 import CreateProfile from '../containers/CreateProfile';
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/login' component={Login} />
-      <Route exact path='/signup' component={Register} />
-      <Route exact patch='/createplace' component={CreatePlace} />
-      <Route exact path='/createprofile' component={CreateProfile} />
-    </Switch>
-  </BrowserRouter>
+  <Router>
+    <Home path='/' />
+    <Signup path='/signup' />
+    <Signin path='/signin' />
+    <CreatePlace path='/places/create' />
+    <CreateProfile path='/profile/create' />
+  </Router>
 );
 
 export default App;
