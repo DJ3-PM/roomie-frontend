@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { GlobalStyle } from '../styles/GlobalStyle'
 import { Router } from '@reach/router';
 import Home from '../containers/Home';
 import Signin from '../containers/Signin';
@@ -9,14 +11,17 @@ import ViewRoom from '../containers/ViewRoom';
 
 const App = () => {
   return (
-    <Router>
-      <Home path='/' />
-      <Signup path='/signup' />
-      <Signin path='/signin' />
-      <CreatePlace path='/places/create' />
-      <CreateProfile path='/profile/create' />
-      <ViewRoom path='/places' />
-    </Router>
+    <>
+      <GlobalStyle />
+      <Router>
+        <Home path='/' />
+        <Signup path='/signup' />
+        <Signin path='/signin' />
+        <CreatePlace path='/places/create' />
+        <CreateProfile path='/profile/create' />
+        <ViewRoom path='/places' />
+      </Router>
+    </>
   );
 };
 
