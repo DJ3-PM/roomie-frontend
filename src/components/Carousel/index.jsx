@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import CarouselItem from '../CarouselItem';
-import { Section, CarouselWrapper, ListImages, BtnLeftWrapper, BtnRightWrapper, Button, BtnImg, Image } from './styles';
+import ImagesList from '../ImagesList';
+import { Section, CarouselWrapper, BtnLeftWrapper, BtnRightWrapper, Button, BtnImg, Image } from './styles';
 import btnLeft from '../../assets/static/left.svg';
 import btnRight from '../../assets/static/right.svg';
 import placeImage from '../../assets/static/2.jpg';
@@ -27,7 +28,7 @@ const Carousel = () => {
           </Button>
         </BtnRightWrapper>
       </CarouselWrapper>
-      <ListImages>
+      <ImagesList>
         <Link to={placeImage2}>
           <Image src={placeImage} />
         </Link>
@@ -43,7 +44,7 @@ const Carousel = () => {
         <Link to={placeImage2}>
           <Image src={placeImage} />
         </Link>
-      </ListImages>
+      </ImagesList>
     </Section>
   );
 };
