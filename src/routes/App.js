@@ -5,6 +5,7 @@ import Signin from '../containers/Signin';
 import Signup from '../containers/Signup';
 import CreatePlace from '../containers/CreatePlace';
 import CreateProfile from '../containers/CreateProfile';
+import ViewRoom from '../containers/ViewRoom';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Signin path='/signin' />
       <CreatePlace path='/places/create' />
       <CreateProfile path='/profile/create' />
+      <ViewRoom path='/places' />
     </Router>
   );
 };
