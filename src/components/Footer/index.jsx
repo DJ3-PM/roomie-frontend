@@ -1,15 +1,15 @@
 import React from 'react';
-import '../assets/styles/components/Footer.scss';
+import { Footer, Link } from './styles';
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
-  <footer className='footer'>
-    <p>2020 JD3, Inc. All rights reserved</p>
-    <a href='#'>Privacidad</a>
-    <a href='#'>Términos</a>
-    <a href='#'>Platzi Master</a>
-  </footer>
-);
+    <Footer>
+      <p>2020 JD3, Inc. All rights reserved</p>
+      <Link to='/'>Privacidad</Link>
+      <Link to='/'>Términos</Link>
+      <Link to='/'>Platzi Master</Link>
+    </Footer>
+  );
 };
 
-export default Footer;
+export default FooterComponent;
