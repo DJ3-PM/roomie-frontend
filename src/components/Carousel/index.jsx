@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import CarouselItem from '../CarouselItem';
-import { Section, CarouselWrapper, ListImages, ListItem, BtnLeftWrapper, BtnRightWrapper, ButtonLeft, ButtonRight, BtnImg } from './styles';
+import ImagesList from '../ImagesList';
+import { Section, CarouselWrapper, BtnLeftWrapper, BtnRightWrapper, Button, BtnImg, Image } from './styles';
 import btnLeft from '../../assets/static/left.svg';
 import btnRight from '../../assets/static/right.svg';
 import placeImage from '../../assets/static/2.jpg';
@@ -12,9 +13,9 @@ const Carousel = () => {
     <Section>
       <CarouselWrapper>
         <BtnLeftWrapper>
-          <ButtonLeft>
+          <Button>
             <BtnImg src={btnLeft} />
-          </ButtonLeft>
+          </Button>
         </BtnLeftWrapper>
         <CarouselItem image={placeImage} />
         <CarouselItem image={placeImage} />
@@ -22,28 +23,28 @@ const Carousel = () => {
         <CarouselItem image={placeImage} />
         <CarouselItem image={placeImage} />
         <BtnRightWrapper>
-          <ButtonRight>
+          <Button>
             <BtnImg src={btnRight} />
-          </ButtonRight>
+          </Button>
         </BtnRightWrapper>
       </CarouselWrapper>
-      <ListImages>
+      <ImagesList>
         <Link to={placeImage2}>
-          <ListItem image={placeImage} />
+          <Image src={placeImage} />
         </Link>
         <Link to={placeImage2}>
-          <ListItem image={placeImage} />
+          <Image src={placeImage} />
         </Link>
         <Link to={placeImage2}>
-          <ListItem image={placeImage} />
+          <Image src={placeImage} />
         </Link>
         <Link to={placeImage2}>
-          <ListItem image={placeImage} />
+          <Image src={placeImage} />
         </Link>
         <Link to={placeImage2}>
-          <ListItem image={placeImage} />
+          <Image src={placeImage} />
         </Link>
-      </ListImages>
+      </ImagesList>
     </Section>
   );
 };
