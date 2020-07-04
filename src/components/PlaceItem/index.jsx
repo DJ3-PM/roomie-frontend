@@ -1,17 +1,17 @@
 import React from 'react';
-import '../assets/styles/components/PlaceItem.scss';
+
+import { Item, Like, Title } from './styles';
 
 const PlaceItem = () => (
-  <article>
-    <span className='like'>Heart</span>
+  <Item>
+    <Like>Heart</Like>
     <img src='img/room.jpg' alt='Roomie' />
-    <h2>Santa Marta</h2>
+    <Title>Santa Marta</Title>
     <p>
       Rodadero
       <span>$10.000</span>
     </p>
-
-  </article>
+  </Item>
 );
 
 export default PlaceItem;
