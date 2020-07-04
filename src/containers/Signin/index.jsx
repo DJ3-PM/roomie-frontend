@@ -4,8 +4,7 @@ import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
-
-import { ButtonContainer, Button } from './styles';
+import FormButton from '../../components/FormButton';
 
 const Signin = () => {
   return (
@@ -14,9 +13,7 @@ const Signin = () => {
         <Form action='' title='Sign in'>
           <Input type='email' placeholder='Email' required />
           <Input type='password' placeholder='Password' required />
-          <ButtonContainer>
-            <Button type='submit'>Signin</Button>
-          </ButtonContainer>
+          <FormButton text='Sign in!' />
         </Form>
       </Wrapper>
     </Layout>
