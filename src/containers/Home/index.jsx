@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-import Search from '../../components/Search';
+import Search from '../../components/search';
 import Categories from '../../components/Categories';
 import Place from '../../components/Place';
 import PlaceItem from '../../components/PlaceItem';
