@@ -8,7 +8,7 @@ import GalleryItem from '../GalleryItem';
 
 const Gallery = () => {
   return (
-    <Section class='gallery'>
+    <Section>
       <H2>ELIGE IMAGENES PARA MOSTRAR</H2>
       <GalleryItem image={moreIcon} />
       <GalleryItem image={placeImage} />
