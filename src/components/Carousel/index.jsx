@@ -1,14 +1,18 @@
-import React from 'react';
-import { Link } from '@reach/router';
+import React, { useState } from 'react';
 import CarouselItem from '../CarouselItem';
 import ImagesList from '../ImagesList';
 import { Section, CarouselWrapper, BtnLeftWrapper, BtnRightWrapper, Button, BtnImg, Image } from './styles';
 import btnLeft from '../../assets/static/left.svg';
 import btnRight from '../../assets/static/right.svg';
-import placeImage from '../../assets/static/2.jpg';
-import placeImage2 from '../../assets/static/3.jpg';
 
-const Carousel = () => {
+const Carousel = ({ images = [] }) => {
+  const [mainImage, setMainImage] = useState(images[0]);
+
+  const handleOnClick = (event) => {
+    console.log(event.target.id);
+    setMainImage(images[event.target.id]);
+  };
+
   return (
     <Section>
       <CarouselWrapper>
@@ -17,11 +21,7 @@ const Carousel = () => {
             <BtnImg src={btnLeft} />
           </Button>
         </BtnLeftWrapper>
-        <CarouselItem id='image1' image={placeImage} />
-        <CarouselItem id='image2' image={placeImage} />
-        <CarouselItem image={placeImage} />
-        <CarouselItem image={placeImage} />
-        <CarouselItem image={placeImage} />
+        <CarouselItem id='image1' image={mainImage} />
         <BtnRightWrapper>
           <Button>
             <BtnImg src={btnRight} />
@@ -29,21 +29,14 @@ const Carousel = () => {
         </BtnRightWrapper>
       </CarouselWrapper>
       <ImagesList>
-        <Link to={placeImage2}>
-          <Image src={placeImage} />
-        </Link>
-        <Link to={placeImage2}>
-          <Image src={placeImage} />
-        </Link>
-        <Link to={placeImage2}>
-          <Image src={placeImage} />
-        </Link>
-        <Link to={placeImage2}>
-          <Image src={placeImage} />
-        </Link>
-        <Link to={placeImage2}>
-          <Image src={placeImage} />
-        </Link>
+        {
+          images.map((image, index) => {
+            return (
+              // eslint-disable-next-line react/no-array-index-key
+              <Image key={index} src={image} id={index} onClick={handleOnClick} />
+            );
+          })
+        }
       </ImagesList>
     </Section>
   );

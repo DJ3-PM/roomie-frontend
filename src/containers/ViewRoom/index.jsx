@@ -1,15 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
 import Carousel from '../../components/Carousel';
 import Host from '../../components/Host';
 
-const ViewRoom = () => {
+const ViewRoom = ({ place }) => {
+  console.log(place);
+  const { images } = place;
+
   return (
     <Layout>
-      <Carousel />
+      <Carousel images={images} />
       <Host />
     </Layout>
   );
 };
 
-export default ViewRoom;
+const mapStateToProps = (state) => {
+  return {
+    place: state.place,
+  };
+};
+export default connect(mapStateToProps, null)(ViewRoom);
