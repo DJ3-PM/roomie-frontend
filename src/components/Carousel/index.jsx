@@ -17,8 +17,8 @@ const Carousel = () => {
             <BtnImg src={btnLeft} />
           </Button>
         </BtnLeftWrapper>
-        <CarouselItem image={placeImage} />
-        <CarouselItem image={placeImage} />
+        <CarouselItem id='image1' image={placeImage} />
+        <CarouselItem id='image2' image={placeImage} />
         <CarouselItem image={placeImage} />
         <CarouselItem image={placeImage} />
         <CarouselItem image={placeImage} />

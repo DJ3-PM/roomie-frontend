@@ -10,11 +10,7 @@ const Host = () => {
     <Section>
       <HostInfo>
         <HostInfoDetails>
-<<<<<<< HEAD
-          <HostInfoImg src={avatar} alt='Imagen del host'/>
-=======
           <HostInfoImg src={avatar} alt='Imagen del host' />
->>>>>>> 4b4da2b45b092dcd24ffb97a48bda62a99a87ae3
           <h3>Jesús Montero</h3>
           <p>100.000 USD / DIA</p>
         </HostInfoDetails>
