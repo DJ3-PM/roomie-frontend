@@ -1,43 +1,68 @@
 import React from 'react';
 import { Section, HostInfo, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, BtnContact, DescriptionRoom, DescriptionRoomInfo, DescriptionRoomText } from './styles';
-import avatar from '../../assets/static/avatar.jpg';
-import wifi from '../../assets/static/wifi.svg';
-import bathroom from '../../assets/static/baño.svg';
-import parking from '../../assets/static/parking.svg';
+import wifiIcon from '../../assets/static/wifi.svg';
+import bathIcon from '../../assets/static/baño.svg';
+import parkingIcon from '../../assets/static/parking.svg';
 
-const Host = () => {
+const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, profileId: host }) => {
   return (
     <Section>
       <HostInfo>
         <HostInfoDetails>
-          <HostInfoImg src={avatar} alt='Imagen del host' />
-          <h3>Jesús Montero</h3>
-          <p>100.000 USD / DIA</p>
+          <HostInfoImg src={host.avatar} alt='Imagen del host' />
+          <h3>{`${host.firstname} ${host.lastname}`}</h3>
+          <p>{`${price} COP / Día`}</p>
         </HostInfoDetails>
         <HostServices>
-          <HostServicesDetails>
-            <HostServicesImg src={wifi} alt='Imagen del servicio wifi' />
-            <HostServicesName>Incluye Wifi</HostServicesName>
-          </HostServicesDetails>
-          <HostServicesDetails>
-            <HostServicesImg src={bathroom} alt='Imagen del servicio baño' />
-            <HostServicesName>Baño Privado</HostServicesName>
-          </HostServicesDetails>
-          <HostServicesDetails>
-            <HostServicesImg src={parking} alt='Imagen del servicio parking' />
-            <HostServicesName>Parqueadero</HostServicesName>
-          </HostServicesDetails>
-          <HostServicesDetails>
-            <HostServicesImg src={wifi} alt='Imagen del servicio netflix' />
-            <HostServicesName>Netflix</HostServicesName>
-          </HostServicesDetails>
+
+          {
+            wifi ? (
+              <>
+                <HostServicesDetails>
+                  <HostServicesImg src={wifiIcon} alt='Imagen del servicio wifi' />
+                  <HostServicesName>Incluye Wifi</HostServicesName>
+                </HostServicesDetails>
+              </>
+            ) :
+              ''
+          }
+          {
+            bath ? (
+              <>
+                <HostServicesDetails>
+                  <HostServicesImg src={bathIcon} alt='Imagen del servicio baño' />
+                  <HostServicesName>Baño Privado</HostServicesName>
+                </HostServicesDetails>
+              </>
+            ) : ''
+          }
+          {
+            parking ? (
+              <>
+                <HostServicesDetails>
+                  <HostServicesImg src={parkingIcon} alt='Imagen del servicio parking' />
+                  <HostServicesName>Parqueadero</HostServicesName>
+                </HostServicesDetails>
+              </>
+            ) : ''
+          }
+          {
+            tv ? (
+              <>
+                <HostServicesDetails>
+                  <HostServicesImg src={wifiIcon} alt='Imagen del servicio netflix' />
+                  <HostServicesName>Netflix</HostServicesName>
+                </HostServicesDetails>
+              </>
+            ) : ''
+          }
         </HostServices>
-        <BtnContact>Contactar</BtnContact>
+        <BtnContact href={`tel:${host.whatsapp}`}>Llamar</BtnContact>
       </HostInfo>
       <DescriptionRoom>
         <DescriptionRoomInfo>
           <h3>DESCRIPCION</h3>
-          <DescriptionRoomText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto nobis nulla, quaerat tempore animi hic fugiat impedit? Voluptate fugit voluptatibus cupiditate aliquid. Accusantium corporis temporibus, eligendi eaque laudantium asperiores! Dolor!Magnam, cum neque eius rerum cumque libero tempore, aliquid praesentium assumenda unde veniam quos id mollitia quis odit laudantium. Pariatur earum hic voluptatem quibusdam enim. Quod quia blanditiis rem in.</DescriptionRoomText>
+          <DescriptionRoomText>{description}</DescriptionRoomText>
         </DescriptionRoomInfo>
         <DescriptionRoomInfo>
           <h3>EL ESPACIO</h3>
