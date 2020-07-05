@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Section = styled.section`
     display: flex;
     flex-direction: column;
+    margin: 30px auto;
 `;
 
 export const CarouselWrapper = styled.div`
