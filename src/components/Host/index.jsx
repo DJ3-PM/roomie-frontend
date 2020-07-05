@@ -1,8 +1,10 @@
 import React from 'react';
-import { Section, HostInfo, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, BtnContact, DescriptionRoom, DescriptionRoomInfo, DescriptionRoomText } from './styles';
+import { Section, HostInfo, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact, DescriptionRoom, DescriptionRoomInfo, DescriptionRoomText } from './styles';
 import wifiIcon from '../../assets/static/wifi.svg';
 import bathIcon from '../../assets/static/baño.svg';
 import parkingIcon from '../../assets/static/parking.svg';
+import whatsapp from '../../assets/static/whatsapp.svg';
+import email from '../../assets/static/email.svg';
 
 const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, profileId: host }) => {
   return (
@@ -57,7 +59,14 @@ const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, p
             ) : ''
           }
         </HostServices>
-        <BtnContact href={`tel:${host.whatsapp}`}>Llamar</BtnContact>
+        <ContactWrapper>
+          <BtnContact href={`tel:${host.whatsapp}`}>
+            <HostServicesImg src={whatsapp} />
+          </BtnContact>
+          <BtnContact href={`mailto:${host.contactEmail}`}>
+            <HostServicesImg src={email} />
+          </BtnContact>
+        </ContactWrapper>
       </HostInfo>
       <DescriptionRoom>
         <DescriptionRoomInfo>

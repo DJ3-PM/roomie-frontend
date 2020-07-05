@@ -30,7 +30,7 @@ export const Image = styled.img`
     width: 120px;
     height: 120px;
     object-fit: cover;
-
+    courser: pointer;
 `;
 
 export const BtnLeftWrapper = styled.div`

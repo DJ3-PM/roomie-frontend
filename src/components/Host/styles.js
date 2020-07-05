@@ -64,14 +64,18 @@ export const HostServicesName = styled.p`
      margin-left: 40px;
  `;
 
+export const ContactWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
 export const BtnContact = styled.a`
-     justify-self: start;
-     background: #c3d233;
      outline: none;
      padding: 10px 20px;
      border: none;
      text-decoration: none;
      color: black;
+     cursor: pointer;
 
      &:hover {
          font-weight: bold;
