@@ -4,12 +4,19 @@ export const Section = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 50px repeat(2, 1fr);
+  margin-top: 30px;
 
   @media screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px repeat(2, 1fr);
     margin: 50px;
+  }
+
+  @media screen and (max-width: 375px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px repeat(3, 1fr);
   }
 `;
 
@@ -20,5 +27,9 @@ export const H2 = styled.h2`
 
   @media screen and (max-width: 768px) {
     grid-column: 1 / 4;
+  }
+
+  @media screen and (max-width: 375px) {
+    grid-column: 1 / 3;
   }
 `;
