@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
@@ -11,7 +12,7 @@ const ViewRoom = ({ place }) => {
   return (
     <Layout>
       <Carousel images={images} />
-      <Host />
+      <Host {...place} />
     </Layout>
   );
 };

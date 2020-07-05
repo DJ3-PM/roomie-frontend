@@ -56,12 +56,14 @@ export const HostServicesName = styled.p`
      margin-left: 40px;
  `;
 
-export const BtnContact = styled.button`
+export const BtnContact = styled.a`
      justify-self: start;
      background: #c3d233;
      outline: none;
      padding: 10px 20px;
      border: none;
+     text-decoration: none;
+     color: black;
 
      &:hover {
          font-weight: bold;
