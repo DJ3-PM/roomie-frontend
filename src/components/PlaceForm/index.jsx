@@ -2,11 +2,11 @@
 // TODO: DIVIDE INTO MORE COMPONENTS
 import React from 'react';
 
-import { Services, ServicesTitle, ServicesLabel, Description, DescriptionTitle, Zone, Select, Price, Input, TextArea, Button } from './styles';
+import { Form, Services, ServicesTitle, ServicesLabel, Description, DescriptionTitle, Zone, Select, Price, Input, TextArea, Button } from './styles';
 
 const PlaceForm = () => {
   return (
-    <form>
+    <Form>
       <Services>
         <ServicesTitle>EL ROOMIE INCLUYE ESTOS SERVICIOS</ServicesTitle>
         <ServicesLabel htmlFor='wifi'>
@@ -72,7 +72,7 @@ const PlaceForm = () => {
           Publicar
         </Button>
       </Description>
-    </form>
+    </Form>
   );
 };
 
