@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Item, Like, Title } from './styles';
 
-const PlaceItem = () => (
+const PlaceItem = ({ mainImage, name, location, price }) => (
   <Item>
     <Like>Heart</Like>
-    <img src='img/room.jpg' alt='Roomie' />
-    <Title>Santa Marta</Title>
+    <img src={mainImage} alt='Roomie' />
+    <Title>{name}</Title>
     <p>
-      Rodadero
-      <span>$10.000</span>
+      {location}
+      <span>{price}</span>
     </p>
   </Item>
 );
