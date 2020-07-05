@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Form, FormConstrainer, Title } from './styles';
 
-const FormComponent = ({ action, title, children }) => {
+const FormComponent = ({ action, title, onSubmit, children }) => {
   return (
-    <Form action={action} method='post'>
+    <Form onSubmit={onSubmit}>
       <Title>{title}</Title>
       <FormConstrainer>
         {
