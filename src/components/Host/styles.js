@@ -2,7 +2,12 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
      display: flex;
-     margin-top: 30px;
+     max-width: 940px;
+     margin: 40px auto;
+
+     @media screen and (max-width: 768px) {
+        flex-direction: column;
+     }
  `;
 
 export const HostInfo = styled.section`
@@ -13,6 +18,10 @@ export const HostInfo = styled.section`
      background: #ededed;
      width: 40%;
      padding: 15px;
+     @media screen and (max-width: 768px) {
+        width: 85%;
+        margin: 20px auto;
+     }
  `;
 
 export const HostInfoDetails = styled.div`
@@ -36,14 +45,13 @@ export const HostServices = styled.div`
      justify-content: space-around;
      align-items: center;
      background: #ededed;
-     width: 40%;
      padding: 15px;
  `;
 
 export const HostServicesDetails = styled.div`
      display: flex;
-     margin: 15px;
-     width: 250px;
+     margin: 0 15px;
+     width: 100%;
  `;
 
 export const HostServicesImg = styled.img`
@@ -78,4 +86,5 @@ export const DescriptionRoomInfo = styled.div`
 
 export const DescriptionRoomText = styled.p`
      line-height: 1.5;
+     text-align: justify;
  `;
