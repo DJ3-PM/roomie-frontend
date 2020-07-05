@@ -24,9 +24,10 @@ export const HostInfoDetails = styled.div`
  `;
 
 export const HostInfoImg = styled.img`
-     width: 100px;
-     height: 100px;
+     width: 150px;
+     height: 150px;
      border-radius: 50%;
+     margin-bottom: 15px;
  `;
 
 export const HostServices = styled.div`
@@ -46,6 +47,7 @@ export const HostServicesDetails = styled.div`
  `;
 
 export const HostServicesImg = styled.img`
+     align-self: center;
      width: 25px;
      height: 25px;
  `;
