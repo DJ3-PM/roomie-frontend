@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Gallery from '../../components/Gallery';
@@ -10,7 +10,18 @@ import InputFile from '../../components/InputFile';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
+const transformFilesToURLs = ({ files }) => {
+  const auxArray = [];
+  Object.keys(files).forEach((entry) => {
+    auxArray.push(URL.createObjectURL(files[entry]));
+  });
+  return auxArray;
+};
+
 const CreatePlace = () => {
+  const [form, setForm] = useState({});
+  const [imageList, setImageList] = useState([]);
+
   const handleOnSubmit = (evet) => {
 
   };
@@ -24,12 +35,23 @@ const CreatePlace = () => {
   };
 
   const handleFileInput = (event) => {
+    const { target } = event;
 
+    setForm({
+      ...form,
+      [target.name]: target.files,
+    });
+
+    const imagesArray = transformFilesToURLs(target);
+    setImageList(imagesArray);
   };
+
+  // console.log(form);
   return (
     <Layout>
       <Wrapper>
         <Form title='Create a Place' onSubmit={handleOnSubmit}>
+          <Gallery imagesList={imageList} />
           <InputFile name='images' onChange={handleFileInput} text='Upload pictures of your room' multiple />
           <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
           <InputCheck name='parking' text='Parking' onClick={handleCheckInput} />
