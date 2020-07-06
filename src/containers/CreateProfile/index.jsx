@@ -6,11 +6,12 @@ import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import InputFile from '../../components/InputFile';
+import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
 import userDefault from '../../assets/static/userDefault.svg';
 
-import { Avatar, TextArea, Label } from './styles';
+import { Avatar, Label } from './styles';
 
 const CreateProfile = () => {
   const [profileImage, setProfileImage] = useState(userDefault);
@@ -95,8 +96,7 @@ const CreateProfile = () => {
               <>
                 <Input name='contactEmail' onChange={handleTextInput} text='An email where guests can contact you' type='email' />
                 <Input name='whatsapp' onChange={handleTextInput} text='A WhatsApp enabled phone number for guets to contact you' type='number' />
-                <Label htmlFor='about'>Tell us about you</Label>
-                <TextArea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
+                <TextArea name='about' onChange={handleTextInput} text='Tell us about you' />
               </>
             )
           }
