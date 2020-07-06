@@ -81,7 +81,6 @@ const CreateProfile = () => {
     <Layout>
       <Wrapper>
         <Form title='Create your profile' onSubmit={handleOnSubmit}>
-          {/* TODO: Add file upload option */}
           <Avatar src={profileImage} />
           <Label htmlFor='avatar'>Upload your avatar</Label>
           <InputFile name='avatar' type='file' id='' accept='image/png, image/jpg, image/jpeg' onChange={handleFileInput} />
@@ -100,7 +99,6 @@ const CreateProfile = () => {
                 <Input name='contactEmail' onChange={handleTextInput} type='email' placeholder='Email' />
                 <Label htmlFor='whatsapp'>A WhatsApp enabled phone number for guets to contact you</Label>
                 <Input name='whatsapp' onChange={handleTextInput} type='number' placeholder='Phone' />
-                {/* TODO: Improve TextArea */}
                 <Label htmlFor='about'>Tell us about you</Label>
                 <TextArea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
               </>
