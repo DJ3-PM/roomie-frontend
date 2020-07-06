@@ -5,6 +5,7 @@ import axios from 'axios';
 import Layout from '../../components/Layout';
 import Carousel from '../../components/Carousel';
 import Host from '../../components/Host';
+import Loader from '../../components/Loader';
 
 const usePlaceFetch = (placeId) => {
   const [place, setPlace] = useState({});
@@ -43,7 +44,7 @@ const ViewRoom = ({ match }) => {
     return (
       <>
         {
-          loading ? <h2>Loading</h2> : (
+          loading ? <Loader /> : (
             <>
               <Carousel images={images} />
               <Host {...place} />
