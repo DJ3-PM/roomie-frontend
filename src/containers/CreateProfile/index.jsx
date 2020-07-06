@@ -5,11 +5,12 @@ import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
+import InputFile from '../../components/InputFile';
 import FormButton from '../../components/FormButton';
 
 import userDefault from '../../assets/static/userDefault.svg';
 
-import { Avatar, InputFile, Label, TextArea } from './styles';
+import { Avatar, Label, TextArea } from './styles';
 
 const CreateProfile = () => {
   const [profileImage, setProfileImage] = useState(userDefault);
@@ -82,8 +83,7 @@ const CreateProfile = () => {
       <Wrapper>
         <Form title='Create your profile' onSubmit={handleOnSubmit}>
           <Avatar src={profileImage} />
-          <Label htmlFor='avatar'>Upload your avatar</Label>
-          <InputFile name='avatar' type='file' id='' accept='image/png, image/jpg, image/jpeg' onChange={handleFileInput} />
+          <InputFile onChange={handleFileInput} name='avatar' text='Upload your avatar' />
           <Label htmlFor='firstname'>What&apos;s your name?</Label>
           <Input name='firstname' onChange={handleTextInput} type='text' placeholder='Firstname' />
           <Label htmlFor='lastname'>What&apos;s your lastname?</Label>
