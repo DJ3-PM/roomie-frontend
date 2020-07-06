@@ -3,19 +3,21 @@ import React from 'react';
 import { Section, H2 } from './styles';
 
 import moreIcon from '../../assets/static/more.svg';
-import placeImage from '../../assets/static/2.jpg';
+
 import GalleryItem from '../GalleryItem';
 
-const Gallery = () => {
+const Gallery = ({ imagesList }) => {
+
   return (
     <Section>
       <H2>ELIGE IMAGENES PARA MOSTRAR</H2>
-      <GalleryItem image={moreIcon} />
-      <GalleryItem image={placeImage} />
-      <GalleryItem image={placeImage} />
-      <GalleryItem image={placeImage} />
-      <GalleryItem image={placeImage} />
-      <GalleryItem image={placeImage} />
+      {
+        imagesList.length > 0 ? (
+          // eslint-disable-next-line react/no-array-index-key
+          imagesList.map((image, index) => <GalleryItem key={index} image={image} />)
+        ) : <GalleryItem image={moreIcon} />
+      }
+
     </Section>
   );
 };

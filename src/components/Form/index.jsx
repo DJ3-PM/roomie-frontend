@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Form, FormConstrainer, Title } from './styles';
 
-const FormComponent = ({ action, title, onSubmit, children }) => {
+const FormComponent = ({ title, onSubmit, children }) => {
   return (
     <Form onSubmit={onSubmit}>
       <Title>{title}</Title>
