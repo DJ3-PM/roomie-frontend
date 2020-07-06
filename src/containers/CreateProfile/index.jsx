@@ -9,7 +9,7 @@ import FormButton from '../../components/FormButton';
 
 import userDefault from '../../assets/static/userDefault.svg';
 
-import { Avatar } from './styles';
+import { Avatar, InputFile, Label, TextArea } from './styles';
 
 const CreateProfile = () => {
   const [profileImage, setProfileImage] = useState(userDefault);
@@ -66,7 +66,8 @@ const CreateProfile = () => {
         const { data, status } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/profile', myDataForm, {});
         alert(data.message);
       } catch (error) {
-        console.log(error);
+        const { message } = error.response.data;
+        alert(message);
       }
 
     };
@@ -82,21 +83,26 @@ const CreateProfile = () => {
         <Form title='Create your profile' onSubmit={handleOnSubmit}>
           {/* TODO: Add file upload option */}
           <Avatar src={profileImage} />
-          <input name='avatar' type='file' id='' accept='image/png, image/jpg, image/jpeg' onChange={handleFileInput} />
+          <Label htmlFor='avatar'>Upload your avatar</Label>
+          <InputFile name='avatar' type='file' id='' accept='image/png, image/jpg, image/jpeg' onChange={handleFileInput} />
+          <Label htmlFor='firstname'>What&apos;s your name?</Label>
           <Input name='firstname' onChange={handleTextInput} type='text' placeholder='Firstname' />
+          <Label htmlFor='lastname'>What&apos;s your lastname?</Label>
           <Input name='lastname' onChange={handleTextInput} type='text' placeholder='Lastname' />
-          <label htmlFor='isHost'>
+          <Label htmlFor='isHost'>
             Do you want to be a host?
             <input name='isHost' type='checkbox' onClick={handleCheckInput} />
-          </label>
+          </Label>
           {
             form.isHost && (
               <>
+                <Label htmlFor='contactEmail'>An email where guests can contact you</Label>
                 <Input name='contactEmail' onChange={handleTextInput} type='email' placeholder='Email' />
+                <Label htmlFor='whatsapp'>A WhatsApp enabled phone number for guets to contact you</Label>
                 <Input name='whatsapp' onChange={handleTextInput} type='number' placeholder='Phone' />
                 {/* TODO: Improve TextArea */}
-                <label htmlFor='about'>Tell us about you</label>
-                <textarea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
+                <Label htmlFor='about'>Tell us about you</Label>
+                <TextArea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
               </>
             )
           }
