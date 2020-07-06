@@ -24,6 +24,7 @@ export const ChaseDotBefore = keyframes`
 `;
 
 export const Chase = styled.div`
+    margin: 100px 0;
     width: 100px;
     height: 100px;
     position: relative;
