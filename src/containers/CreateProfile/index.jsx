@@ -54,6 +54,13 @@ const CreateProfile = () => {
       myDataForm.append(`${entry}`, form[entry]);
     });
 
+    // Ensure this data is not sent when user doesn't want to be host
+    if (form.isHost === false) {
+      myDataForm.delete('whatsapp');
+      myDataForm.delete('contactEmail');
+      myDataForm.delete('about');
+    }
+
     const sendDataForm = async () => {
       try {
         const { data, status } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/profile', myDataForm, {});
@@ -82,11 +89,17 @@ const CreateProfile = () => {
             Do you want to be a host?
             <input name='isHost' type='checkbox' onClick={handleCheckInput} />
           </label>
-          <Input name='contactEmail' onChange={handleTextInput} type='email' placeholder='Email' />
-          <Input name='whatsapp' onChange={handleTextInput} type='number' placeholder='Phone' />
-          {/* TODO: Improve TextArea */}
-          <label htmlFor='about'>Tell us about you</label>
-          <textarea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
+          {
+            form.isHost && (
+              <>
+                <Input name='contactEmail' onChange={handleTextInput} type='email' placeholder='Email' />
+                <Input name='whatsapp' onChange={handleTextInput} type='number' placeholder='Phone' />
+                {/* TODO: Improve TextArea */}
+                <label htmlFor='about'>Tell us about you</label>
+                <textarea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
+              </>
+            )
+          }
           <Input name='userId' onChange={handleTextInput} type='text' placeholder='USER ID (TEST)' />
           <FormButton text='Done' />
         </Form>
