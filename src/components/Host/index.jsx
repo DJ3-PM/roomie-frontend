@@ -7,6 +7,8 @@ import whatsapp from '../../assets/static/whatsapp.svg';
 import email from '../../assets/static/email.svg';
 
 const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, profileId: host }) => {
+  const customMessage = `Hola%20estoy%20interesado%20en%20el%20departamento`;
+
   return (
     <Section>
       <HostInfo>
@@ -60,7 +62,7 @@ const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, p
           }
         </HostServices>
         <ContactWrapper>
-          <BtnContact href={`tel:${host.whatsapp}`}>
+          <BtnContact href={`https://wa.me/${host.whatsapp}/?text=${customMessage}`}>
             <HostServicesImg src={whatsapp} />
           </BtnContact>
           <BtnContact href={`mailto:${host.contactEmail}`}>
