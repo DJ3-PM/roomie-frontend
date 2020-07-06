@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 export const Avatar = styled.img`
@@ -6,9 +7,5 @@ export const Avatar = styled.img`
   border-radius: 50%;
   object-fit: cover;
   margin: 10px auto;
-`;
-
-export const Label = styled.label`
-  margin-top: 15px
 `;
 

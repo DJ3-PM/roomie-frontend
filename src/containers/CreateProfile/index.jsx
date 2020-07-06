@@ -6,12 +6,13 @@ import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import InputFile from '../../components/InputFile';
+import InputCheck from '../../components/InputCheck';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
 import userDefault from '../../assets/static/userDefault.svg';
 
-import { Avatar, Label } from './styles';
+import { Avatar } from './styles';
 
 const CreateProfile = () => {
   const [profileImage, setProfileImage] = useState(userDefault);
@@ -87,10 +88,7 @@ const CreateProfile = () => {
           <InputFile onChange={handleFileInput} name='avatar' text='Upload your avatar' />
           <Input name='firstname' onChange={handleTextInput} text={'What\'s your name?'} />
           <Input name='lastname' onChange={handleTextInput} text={'What\'s your lastname?'} />
-          <Label htmlFor='isHost'>
-            Do you want to be a host?
-            <input name='isHost' type='checkbox' onClick={handleCheckInput} />
-          </Label>
+          <InputCheck name='isHost' onClick={handleCheckInput} text='Do you want to be a Host?' />
           {
             form.isHost && (
               <>
@@ -100,7 +98,7 @@ const CreateProfile = () => {
               </>
             )
           }
-          <Input name='userId' onChange={handleTextInput} type='text' placeholder='USER ID (TEST)' />
+          <Input name='userId' onChange={handleTextInput} placeholder='USER ID (TEST)' />
           <FormButton text='Done' />
         </Form>
       </Wrapper>
