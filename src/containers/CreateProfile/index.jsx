@@ -5,11 +5,14 @@ import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
+import InputFile from '../../components/InputFile';
+import InputCheck from '../../components/InputCheck';
+import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
 import userDefault from '../../assets/static/userDefault.svg';
 
-import { Avatar, InputFile, Label, TextArea } from './styles';
+import { Avatar } from './styles';
 
 const CreateProfile = () => {
   const [profileImage, setProfileImage] = useState(userDefault);
@@ -63,7 +66,7 @@ const CreateProfile = () => {
 
     const sendDataForm = async () => {
       try {
-        const { data, status } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/profile', myDataForm, {});
+        const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/profile', myDataForm, {});
         alert(data.message);
       } catch (error) {
         const { message } = error.response.data;
@@ -81,32 +84,21 @@ const CreateProfile = () => {
     <Layout>
       <Wrapper>
         <Form title='Create your profile' onSubmit={handleOnSubmit}>
-          {/* TODO: Add file upload option */}
           <Avatar src={profileImage} />
-          <Label htmlFor='avatar'>Upload your avatar</Label>
-          <InputFile name='avatar' type='file' id='' accept='image/png, image/jpg, image/jpeg' onChange={handleFileInput} />
-          <Label htmlFor='firstname'>What&apos;s your name?</Label>
-          <Input name='firstname' onChange={handleTextInput} type='text' placeholder='Firstname' />
-          <Label htmlFor='lastname'>What&apos;s your lastname?</Label>
-          <Input name='lastname' onChange={handleTextInput} type='text' placeholder='Lastname' />
-          <Label htmlFor='isHost'>
-            Do you want to be a host?
-            <input name='isHost' type='checkbox' onClick={handleCheckInput} />
-          </Label>
+          <InputFile onChange={handleFileInput} name='avatar' text='Upload your avatar' />
+          <Input name='firstname' onChange={handleTextInput} text={'What\'s your name?'} />
+          <Input name='lastname' onChange={handleTextInput} text={'What\'s your lastname?'} />
+          <InputCheck name='isHost' onClick={handleCheckInput} text='Do you want to be a Host?' />
           {
             form.isHost && (
               <>
-                <Label htmlFor='contactEmail'>An email where guests can contact you</Label>
-                <Input name='contactEmail' onChange={handleTextInput} type='email' placeholder='Email' />
-                <Label htmlFor='whatsapp'>A WhatsApp enabled phone number for guets to contact you</Label>
-                <Input name='whatsapp' onChange={handleTextInput} type='number' placeholder='Phone' />
-                {/* TODO: Improve TextArea */}
-                <Label htmlFor='about'>Tell us about you</Label>
-                <TextArea name='about' onChange={handleTextInput} id='' cols='30' rows='10' />
+                <Input name='contactEmail' onChange={handleTextInput} text='An email where guests can contact you' type='email' />
+                <Input name='whatsapp' onChange={handleTextInput} text='A WhatsApp enabled phone number for guets to contact you' type='number' />
+                <TextArea name='about' onChange={handleTextInput} text='Tell us about you' />
               </>
             )
           }
-          <Input name='userId' onChange={handleTextInput} type='text' placeholder='USER ID (TEST)' />
+          <Input name='userId' onChange={handleTextInput} placeholder='USER ID (TEST)' />
           <FormButton text='Done' />
         </Form>
       </Wrapper>

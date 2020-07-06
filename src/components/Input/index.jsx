@@ -1,10 +1,18 @@
 import React from 'react';
 
-import { Input } from './style';
+import { Input, Label } from './style';
 
-const InputComponent = ({ type, name, placeholder, required, onChange }) => {
+const capitalize = (s) => {
+  if (typeof s !== 'string') return '';
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
+const InputComponent = ({ onChange, name = '', type = 'text', text = '', placeholder = null, required = false }) => {
   return (
-    <Input onChange={onChange} type={type} name={name} id='' placeholder={placeholder} required={required && true} />
+    <>
+      <Label htmlFor={name}>{text}</Label>
+      <Input onChange={onChange} type={type} name={name} id='' placeholder={placeholder || capitalize(name)} required={required} />
+    </>
   );
 };
 
