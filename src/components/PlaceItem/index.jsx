@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { Item, Details, Like, Title, Image, Price } from './styles';
+import { Item, Details, Like, Title, Image, ImageContainer, Price, Location } from './styles';
 
 const PlaceItem = ({ mainImage, name, location, price }) => (
   <Item>
-    <Image src={mainImage} alt='Roomie' />
-    <Details>
+    <ImageContainer>
+      <Image src={mainImage} alt='Roomie' />
       <Like>Heart</Like>
+    </ImageContainer>
+    <Details>
       <Title>{name}</Title>
-      <Price>
-        {location}
-        <span>{price}</span>
-      </Price>
+      <Location>{location}</Location>
+      <Price>{`$ ${price} COP`}</Price>
     </Details>
   </Item>
 );

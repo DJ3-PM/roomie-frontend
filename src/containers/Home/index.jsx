@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
+import Wrapper from '../../components/Wrapper';
 import Search from '../../components/Search';
 import Categories from '../../components/Categories';
 import Place from '../../components/Place';
@@ -33,18 +34,21 @@ const Home = () => {
   return (
     <Layout>
       <Search />
-      <Categories title='Encuentra el lugar perfecto'>
-        {
-          loading ? <Loader /> : (
-            <Place>
-              {
+      <Wrapper>
+        <Categories title='Encuentra el lugar perfecto'>
+          {
+            loading ? <Loader /> : (
+              <Place>
+                {
                 // eslint-disable-next-line react/jsx-props-no-spreading
-                places.map((place) => <PlaceItem key={place._id} {...place} />)
-              }
-            </Place>
-          )
-        }
-      </Categories>
+                  places.map((place) => <PlaceItem key={place._id} {...place} />)
+                }
+              </Place>
+            )
+          }
+        </Categories>
+
+      </Wrapper>
     </Layout>
   );
 };
