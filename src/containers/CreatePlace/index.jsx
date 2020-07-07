@@ -156,10 +156,12 @@ const CreatePlace = () => {
         <Form title='Create a Place' onSubmit={handleOnSubmit}>
           <SectionTitle>Let's get started</SectionTitle>
           <Input name='name' onChange={handleTextInput} text='The name of your place' />
-          <SectionTitle>Add some images of your place</SectionTitle>
+          <SectionTitle>Add the main picture of your place</SectionTitle>
           <InputFile name='mainImage' onChange={handleSingleFileInput} text='Upload your main image' />
+          <SectionTitle>Add some extra pictures</SectionTitle>
           <Gallery imagesList={imageList} />
           <InputFile name='images' onChange={handleFileInput} text='Upload pictures of your room' multiple />
+          <SectionTitle>Where's your place located?</SectionTitle>
           <InputSelect name='zone' optionsArray={zones} onChange={handleFirstSelectInput} />
           {
             neighborhoods.length > 0 && (
