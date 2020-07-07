@@ -2,21 +2,14 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 50px repeat(2, 1fr);
-  margin-top: 30px;
+  grid-template-columns: repeat(4, auto);
 
   @media screen and (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px repeat(2, 1fr);
-    margin: 50px;
+    grid-template-columns: repeat(3, auto);
   }
 
   @media screen and (max-width: 375px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px repeat(3, 1fr);
+    grid-template-columns: repeat(2, auto);
   }
 `;
 

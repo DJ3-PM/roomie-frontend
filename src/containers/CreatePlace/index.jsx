@@ -11,6 +11,8 @@ import InputFile from '../../components/InputFile';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
+import { SectionTitle, CheckboxArranger } from './styles';
+
 // TEST profileID: 5f0264cafb88f00456d317df
 const transformFilesToURLs = ({ files }) => {
   const auxArray = [];
@@ -23,6 +25,7 @@ const transformFilesToURLs = ({ files }) => {
 const CreatePlace = () => {
   const [form, setForm] = useState({});
   const [imageList, setImageList] = useState([]);
+  const [mainImage, setMainImage] = useState([]);
   const [zones, setZones] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
 
@@ -109,8 +112,8 @@ const CreatePlace = () => {
       [target.name]: target.files[0],
     });
 
-    // const image = URL.createObjectURL(target.files[0]);
-    // setProfileImage(image);
+    const image = URL.createObjectURL(target.files[0]);
+    setMainImage([image]);
   };
 
   const handleFirstSelectInput = (event) => {
@@ -152,22 +155,31 @@ const CreatePlace = () => {
     <Layout>
       <Wrapper>
         <Form title='Create a Place' onSubmit={handleOnSubmit}>
+          <SectionTitle>Let's get started</SectionTitle>
           <Input name='name' onChange={handleTextInput} text='The name of your place' />
+          <SectionTitle>Add the main picture of your place</SectionTitle>
+          <Gallery imagesList={mainImage} />
           <InputFile name='mainImage' onChange={handleSingleFileInput} text='Upload your main image' />
+          <SectionTitle>Add some extra pictures</SectionTitle>
           <Gallery imagesList={imageList} />
           <InputFile name='images' onChange={handleFileInput} text='Upload pictures of your room' multiple />
+          <SectionTitle>Where's your place located?</SectionTitle>
           <InputSelect name='zone' optionsArray={zones} onChange={handleFirstSelectInput} />
           {
             neighborhoods.length > 0 && (
               <InputSelect name='neighborhood' optionsArray={neighborhoods} onChange={handleSecondSelectInput} />
             )
           }
-          <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
-          <InputCheck name='parking' text='Parking' onClick={handleCheckInput} />
-          <InputCheck name='cleaning' text='Cleaning Service' onClick={handleCheckInput} />
-          <InputCheck name='tv' text='TV' onClick={handleCheckInput} />
-          <InputCheck name='bath' text='Private Bathroom' onClick={handleCheckInput} />
-          <InputCheck name='closet' text='Closet' onClick={handleCheckInput} />
+          <SectionTitle>What caracteristics does your place has?</SectionTitle>
+          <CheckboxArranger>
+            <InputCheck name='bath' text='Private Bathroom' onClick={handleCheckInput} />
+            <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
+            <InputCheck name='parking' text='Parking' onClick={handleCheckInput} />
+            <InputCheck name='tv' text='TV' onClick={handleCheckInput} />
+            <InputCheck name='cleaning' text='Cleaning Service' onClick={handleCheckInput} />
+            <InputCheck name='closet' text='Closet' onClick={handleCheckInput} />
+          </CheckboxArranger>
+          <SectionTitle>Tell us more about your place</SectionTitle>
           <Input name='furniture' onChange={handleTextInput} type='text' />
           <Input name='price' onChange={handleTextInput} type='number' />
           <Input name='size' onChange={handleTextInput} type='number' />
