@@ -11,6 +11,8 @@ import InputFile from '../../components/InputFile';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
+import { CheckboxArranger } from './styles';
+
 // TEST profileID: 5f0264cafb88f00456d317df
 const transformFilesToURLs = ({ files }) => {
   const auxArray = [];
@@ -162,12 +164,14 @@ const CreatePlace = () => {
               <InputSelect name='neighborhood' optionsArray={neighborhoods} onChange={handleSecondSelectInput} />
             )
           }
-          <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
-          <InputCheck name='parking' text='Parking' onClick={handleCheckInput} />
-          <InputCheck name='cleaning' text='Cleaning Service' onClick={handleCheckInput} />
-          <InputCheck name='tv' text='TV' onClick={handleCheckInput} />
-          <InputCheck name='bath' text='Private Bathroom' onClick={handleCheckInput} />
-          <InputCheck name='closet' text='Closet' onClick={handleCheckInput} />
+          <CheckboxArranger>
+            <InputCheck name='bath' text='Private Bathroom' onClick={handleCheckInput} />
+            <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
+            <InputCheck name='parking' text='Parking' onClick={handleCheckInput} />
+            <InputCheck name='tv' text='TV' onClick={handleCheckInput} />
+            <InputCheck name='cleaning' text='Cleaning Service' onClick={handleCheckInput} />
+            <InputCheck name='closet' text='Closet' onClick={handleCheckInput} />
+          </CheckboxArranger>
           <Input name='furniture' onChange={handleTextInput} type='text' />
           <Input name='price' onChange={handleTextInput} type='number' />
           <Input name='size' onChange={handleTextInput} type='number' />
