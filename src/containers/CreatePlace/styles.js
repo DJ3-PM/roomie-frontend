@@ -8,3 +8,9 @@ export const CheckboxArranger = styled.div`
   padding: 10px 5px;
   border-radius: 5px;
 `;
+
+export const SectionTitle = styled.h2`
+  margin-top: 40px;
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 10px;
+`;

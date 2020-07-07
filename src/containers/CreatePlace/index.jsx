@@ -11,7 +11,7 @@ import InputFile from '../../components/InputFile';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
-import { CheckboxArranger } from './styles';
+import { SectionTitle, CheckboxArranger } from './styles';
 
 // TEST profileID: 5f0264cafb88f00456d317df
 const transformFilesToURLs = ({ files }) => {
@@ -154,7 +154,9 @@ const CreatePlace = () => {
     <Layout>
       <Wrapper>
         <Form title='Create a Place' onSubmit={handleOnSubmit}>
+          <SectionTitle>Let's get started</SectionTitle>
           <Input name='name' onChange={handleTextInput} text='The name of your place' />
+          <SectionTitle>Add some images of your place</SectionTitle>
           <InputFile name='mainImage' onChange={handleSingleFileInput} text='Upload your main image' />
           <Gallery imagesList={imageList} />
           <InputFile name='images' onChange={handleFileInput} text='Upload pictures of your room' multiple />
@@ -164,6 +166,7 @@ const CreatePlace = () => {
               <InputSelect name='neighborhood' optionsArray={neighborhoods} onChange={handleSecondSelectInput} />
             )
           }
+          <SectionTitle>What caracteristics does your place has?</SectionTitle>
           <CheckboxArranger>
             <InputCheck name='bath' text='Private Bathroom' onClick={handleCheckInput} />
             <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
@@ -172,6 +175,7 @@ const CreatePlace = () => {
             <InputCheck name='cleaning' text='Cleaning Service' onClick={handleCheckInput} />
             <InputCheck name='closet' text='Closet' onClick={handleCheckInput} />
           </CheckboxArranger>
+          <SectionTitle>Tell us more about your place</SectionTitle>
           <Input name='furniture' onChange={handleTextInput} type='text' />
           <Input name='price' onChange={handleTextInput} type='number' />
           <Input name='size' onChange={handleTextInput} type='number' />
