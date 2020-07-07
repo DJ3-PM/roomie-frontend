@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, SearchContainer, SearchItem } from './styled';
+import { Hero, SearchContainer, SearchItem, Title } from './styled';
 
 const Search = () => {
   return (
@@ -7,7 +7,7 @@ const Search = () => {
       <Hero>
         <SearchContainer>
           <SearchItem type='search' placeholder='Find your next roomie' />
-          <h2>Un lugar para vivir momentos únicos</h2>
+          <Title>Un lugar para vivir momentos únicos</Title>
         </SearchContainer>
       </Hero>
     </div>

@@ -23,10 +23,14 @@ export const SearchContainer = styled.div`
 `;
 
 export const SearchItem = styled.input`
-    width: 800px;
+    width: 80%;
     height: 55px;
     opacity: .7;
     margin-bottom: 25px;
     background-image: url(${searchIcon});
     border: none;
+`;
+
+export const Title = styled.h2`
+    text-align: center;
 `;
