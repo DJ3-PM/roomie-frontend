@@ -25,6 +25,7 @@ const transformFilesToURLs = ({ files }) => {
 const CreatePlace = () => {
   const [form, setForm] = useState({});
   const [imageList, setImageList] = useState([]);
+  const [mainImage, setMainImage] = useState([]);
   const [zones, setZones] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
 
@@ -111,8 +112,8 @@ const CreatePlace = () => {
       [target.name]: target.files[0],
     });
 
-    // const image = URL.createObjectURL(target.files[0]);
-    // setProfileImage(image);
+    const image = URL.createObjectURL(target.files[0]);
+    setMainImage([image]);
   };
 
   const handleFirstSelectInput = (event) => {
@@ -157,6 +158,7 @@ const CreatePlace = () => {
           <SectionTitle>Let's get started</SectionTitle>
           <Input name='name' onChange={handleTextInput} text='The name of your place' />
           <SectionTitle>Add the main picture of your place</SectionTitle>
+          <Gallery imagesList={mainImage} />
           <InputFile name='mainImage' onChange={handleSingleFileInput} text='Upload your main image' />
           <SectionTitle>Add some extra pictures</SectionTitle>
           <Gallery imagesList={imageList} />
