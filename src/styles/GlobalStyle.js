@@ -4,6 +4,10 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
+:root {
+  --accent-color: #BACD25;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;;
