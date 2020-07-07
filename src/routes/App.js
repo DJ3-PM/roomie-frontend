@@ -7,6 +7,7 @@ import Signup from '../containers/Signup';
 import CreatePlace from '../containers/CreatePlace';
 import CreateProfile from '../containers/CreateProfile';
 import ViewRoom from '../containers/ViewRoom';
+import NotFound from '../components/NotFound';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path='/create/place' component={CreatePlace} />
         <Route exact path='/create/profile' component={CreateProfile} />
         <Route exact path='/places/:placeId' component={ViewRoom} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

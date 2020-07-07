@@ -3,8 +3,8 @@ import { Section, HostInfo, HostInfoDetails, HostInfoImg, HostServices, HostServ
 import wifiIcon from '../../assets/static/wifi.svg';
 import bathIcon from '../../assets/static/baño.svg';
 import parkingIcon from '../../assets/static/parking.svg';
-import whatsapp from '../../assets/static/whatsapp.svg';
-import email from '../../assets/static/email.svg';
+import whatsappIcon from '../../assets/static/whatsapp.svg';
+import emailIcon from '../../assets/static/email.svg';
 
 const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, profileId: host }) => {
   const customMessage = `Hola%20estoy%20interesado%20en%20el%20departamento`;
@@ -63,10 +63,10 @@ const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, p
         </HostServices>
         <ContactWrapper>
           <BtnContact href={`https://wa.me/${host.whatsapp}/?text=${customMessage}`}>
-            <HostServicesImg src={whatsapp} />
+            <HostServicesImg src={whatsappIcon} />
           </BtnContact>
           <BtnContact href={`mailto:${host.contactEmail}`}>
-            <HostServicesImg src={email} />
+            <HostServicesImg src={emailIcon} />
           </BtnContact>
         </ContactWrapper>
       </HostInfo>
