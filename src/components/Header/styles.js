@@ -36,7 +36,7 @@ export const Ul = styled.ul`
   height: 75px;
   list-style: none;
   position: absolute;
-  top: 72px;
+  top: 55px;
   right: 30px;
   padding: 0;
   
