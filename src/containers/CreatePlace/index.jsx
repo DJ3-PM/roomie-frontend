@@ -146,7 +146,7 @@ const CreatePlace = () => {
     const { target } = event;
     setForm({
       ...form,
-      location: `${form.location}, ${target.value}`,
+      location: `${form.location.split(',')[0]}, ${target.value}`,
     });
   };
 
