@@ -1,18 +1,15 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Gallery from '../../components/Gallery';
-import PlaceForm from '../../components/PlaceForm';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import InputCheck from '../../components/InputCheck';
+import InputSelect from '../../components/InputSelect';
 import InputFile from '../../components/InputFile';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
-
-import { Select } from './styles';
 
 // TEST profileID: 5f0264cafb88f00456d317df
 const transformFilesToURLs = ({ files }) => {
@@ -159,16 +156,12 @@ const CreatePlace = () => {
           <InputFile name='mainImage' onChange={handleSingleFileInput} text='Upload your main image' />
           <Gallery imagesList={imageList} />
           <InputFile name='images' onChange={handleFileInput} text='Upload pictures of your room' multiple />
-          <Select name='zone' onChange={handleFirstSelectInput}>
-            {
-              zones.map((zone, index) => <option key={index} value={zone}>{zone}</option>)
-            }
-          </Select>
-          <Select name='neighborhood' onChange={handleSecondSelectInput}>
-            {
-              neighborhoods.map((neighborhood, index) => <option key={index} value={neighborhood}>{neighborhood}</option>)
-            }
-          </Select>
+          <InputSelect name='zone' optionsArray={zones} onChange={handleFirstSelectInput} />
+          {
+            neighborhoods.length > 0 && (
+              <InputSelect name='neighborhood' optionsArray={neighborhoods} onChange={handleSecondSelectInput} />
+            )
+          }
           <InputCheck name='wifi' text='Wi-Fi' onClick={handleCheckInput} />
           <InputCheck name='parking' text='Parking' onClick={handleCheckInput} />
           <InputCheck name='cleaning' text='Cleaning Service' onClick={handleCheckInput} />
