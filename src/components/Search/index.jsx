@@ -1,17 +1,15 @@
 import React from 'react';
-import { Hero, SearchContainer, SearchItem, Title, SearchIconItem } from './styled';
+import { SearchContainer, SearchItem, Title, SearchIconItem } from './styles';
 
-const Search = () => {
+const Search = ({ onChange }) => {
   return (
-    <div>
-      <Hero>
-        <SearchContainer>
-          <SearchItem type='search' placeholder='Find your next roomie' />
-          <SearchIconItem />
-        </SearchContainer>
-          <Title>Un lugar para vivir momentos únicos</Title>
-      </Hero>
-    </div>
+    <>
+      <SearchContainer>
+        <SearchItem onChange={onChange} type='search' placeholder='Find your next roomie' />
+        <SearchIconItem />
+      </SearchContainer>
+      <Title>Un lugar para vivir momentos únicos</Title>
+    </>
   );
 };
 export default Search;

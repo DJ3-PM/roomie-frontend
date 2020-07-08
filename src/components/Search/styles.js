@@ -1,19 +1,5 @@
 import styled from 'styled-components';
-import heroBackground from '../../assets/static/bg-hero.jpg';
 import searchIcon from '../../assets/static/search.svg';
-
-export const Hero = styled.div`
-    background-image: url(${heroBackground});
-    background-position: center;
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    display: flex;
-`;
 
 export const SearchContainer = styled.div`
    width: 80%;
@@ -29,11 +15,7 @@ export const SearchContainer = styled.div`
     }
     
 `;
-// display: flex;
-// justify-content: center;
-// flex-direction: column;
-// align-items: center;
-// height: 100%;
+
 
 export const SearchItem = styled.input`
     width: inherit;
@@ -43,11 +25,7 @@ export const SearchItem = styled.input`
     background: none;
     
 `;
-// width: 80%;
-// height: 55px;
-// margin-bottom: 25px;
 
-// border: none;
 
 export const Title = styled.h2`
     text-align: center;
