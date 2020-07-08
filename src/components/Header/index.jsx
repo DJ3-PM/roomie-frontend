@@ -1,19 +1,22 @@
 import React from 'react';
-import { HeaderStyle, Nav, Logo, Avatar, Ul, Li, Link } from './styles';
+import { Link } from 'react-router-dom';
+import { HeaderStyle, Nav, Logo, Avatar, Ul, Li } from './styles';
 import logoImg from '../../assets/static/logo.png';
 import avatarImg from '../../assets/static/avatar.jpg';
 
 const Header = () => (
 
   <HeaderStyle>
-    <figure>
-      <Logo src={logoImg} alt='Logo DJ3' />
-    </figure>
+    <Link to='/'>
+      <figure>
+        <Logo src={logoImg} alt='Logo DJ3' />
+      </figure>
+    </Link>
     <Nav>
       <Avatar src={avatarImg} alt='Avatar' />
       <Ul>
-        <Li><Link to='/'>Anfitrión</Link></Li>
-        <Li><Link to='/'>Huésped</Link></Li>
+        <Li>Anfitrión</Li>
+        <Li>Huésped</Li>
       </Ul>
     </Nav>
   </HeaderStyle>

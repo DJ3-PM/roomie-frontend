@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as LinkRouter } from '@reach/router';
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -52,12 +51,12 @@ export const Li = styled.li`
   }
 `;
 
-export const Link = styled(LinkRouter)`
-  color: black;
-  text-decoration: none;
-  padding: 10px;
-  
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+// export const a = styled(LinkRouter)`
+//   color: black;
+//   text-decoration: none;
+//   padding: 10px;
+
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// `;
