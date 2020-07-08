@@ -9,8 +9,7 @@ export const Section = styled.section`
 export const CarouselWrapper = styled.div`
     display: flex;
     overflow-x: hidden;
-    max-width: 940px;
-    margin: 30px auto;
+    position: relative;
 `;
 
 export const ListImages = styled.div`
@@ -26,23 +25,25 @@ export const ListItem = styled.div`
 `;
 
 export const Image = styled.img`
-    margin-right: 10px;
+    margin: 5px;
     width: 120px;
     height: 120px;
     object-fit: cover;
-    courser: pointer;
+    cursor: pointer;
 `;
 
 export const BtnLeftWrapper = styled.div`
     position: absolute;
+    transform: translate(0, -50%);
     top: 50%;
-    left: 20%;
+    left: 10%;
 `;
 
 export const BtnRightWrapper = styled.div`
     position: absolute;
     top: 50%;
-    right: 20%;
+    transform: translate(0, -50%);
+    right: 10%;
 `;
 
 export const Button = styled.button`
@@ -59,4 +60,9 @@ export const Button = styled.button`
 export const BtnImg = styled.img`
     width: 50px;
     height: 50px;
+
+    @media screen and (max-width: 768px) {
+        width: 35px;
+        height: 35px;
+    }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ImgWrapper = styled.div`
     width: 100%;
-    height: 480px;
+    height: 100%;
     flex-shrink: 0;
 `;
 
