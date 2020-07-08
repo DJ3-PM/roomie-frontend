@@ -7,7 +7,7 @@ import Signup from '../containers/Signup';
 import CreatePlace from '../containers/CreatePlace';
 import CreateProfile from '../containers/CreateProfile';
 import ViewRoom from '../containers/ViewRoom';
-import NotFound from '../components/NotFound';
+import NotFound from '../containers/NotFound';
 
 const App = () => {
   return (
