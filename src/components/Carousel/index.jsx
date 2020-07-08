@@ -9,8 +9,8 @@ const Carousel = ({ images = [] }) => {
   const [mainImage, setMainImage] = useState(images[0]);
 
   const handleOnClick = (event) => {
-    console.log(event.target.id);
-    setMainImage(images[event.target.id]);
+    const { target } = event;
+    setMainImage(images[target.id]);
   };
 
   return (
@@ -21,7 +21,7 @@ const Carousel = ({ images = [] }) => {
             <BtnImg src={btnLeft} />
           </Button>
         </BtnLeftWrapper>
-        <CarouselItem id='image1' image={mainImage} />
+        <CarouselItem active={true} id='image1' image={mainImage} />
         <BtnRightWrapper>
           <Button>
             <BtnImg src={btnRight} />
@@ -33,7 +33,7 @@ const Carousel = ({ images = [] }) => {
           images.map((image, index) => {
             return (
               // eslint-disable-next-line react/no-array-index-key
-              <Image key={index} src={image} id={index} onClick={handleOnClick} />
+              <Image key={index} src={image} id={index} onClick={handleOnClick} active={image === mainImage && true} />
             );
           })
         }
