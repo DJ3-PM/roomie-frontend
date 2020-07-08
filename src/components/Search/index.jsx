@@ -9,7 +9,7 @@ const Search = () => {
           <SearchItem type='search' placeholder='Find your next roomie' />
           <SearchIconItem />
         </SearchContainer>
-          <Title>Un lugar para vivir momentos únicos</Title>
+        <Title>Un lugar para vivir momentos únicos</Title>
       </Hero>
     </div>
   );
