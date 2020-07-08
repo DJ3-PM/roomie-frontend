@@ -2,6 +2,29 @@ import styled from 'styled-components';
 
 export const ImageContainer = styled.div`
   height: 250px;
+  position: relative;
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+`;
+
+export const Button = styled.button`
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  top: 10px;
+  right: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  cursor: pointer;
 `;
 
 export const Item = styled.div`
@@ -26,21 +49,11 @@ export const Details = styled.div`
   text-align: center;
 `;
 
-export const Like = styled.div`
-  
-`;
-
 export const Title = styled.h2`
   font-size: 16px;
   margin: 5px 0;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--accent-color);
-`;
-
-export const Image = styled.img`
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
 `;
 
 export const Location = styled.p`
