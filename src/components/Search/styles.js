@@ -1,19 +1,5 @@
 import styled from 'styled-components';
-import heroBackground from '../../assets/static/bg-hero.jpg';
 import searchIcon from '../../assets/static/search.svg';
-
-export const Hero = styled.div`
-    background-image: url(${heroBackground});
-    background-position: center;
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    display: flex;
-`;
 
 export const SearchContainer = styled.div`
    width: 80%;

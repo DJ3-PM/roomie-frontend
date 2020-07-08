@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from '../Layout';
-import Wrapper from '../Wrapper';
-import { MainContent, Title, MsgError, BtnBackHome, Image404 } from './styles';
-import astronauta from '../../assets/static/astronauta.svg';
+import Layout from '../../components/Layout';
+import Wrapper from '../../components/Wrapper';
+import { MainContent, Title, MsgError, BtnBackHome } from './styles';
+import Astronaut from '../../components/Astronaut';
 
 const NotFound = () => {
   return (
@@ -10,7 +10,7 @@ const NotFound = () => {
       <Wrapper>
         <MainContent>
           <Title>404</Title>
-          <Image404 src={astronauta} />
+          <Astronaut />
           <MsgError>
             Page Not Found
             <br />
