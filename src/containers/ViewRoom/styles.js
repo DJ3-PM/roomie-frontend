@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     margin: 20px 0;
 
     @media screen and (max-width: 768px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 `;
 
@@ -22,4 +22,3 @@ export const DescriptionRoomText = styled.p`
      line-height: 1.5;
      text-align: justify;
  `;
- 

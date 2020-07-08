@@ -30,8 +30,6 @@ export const Image = styled.img`
     height: 120px;
     object-fit: cover;
     cursor: pointer;
-<<<<<<< HEAD
-=======
     box-sizing: initial;
     border: 5px solid transparent;
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
@@ -44,7 +42,6 @@ export const Image = styled.img`
             `;
     }
   }}
->>>>>>> ff305f2b13e13bcc4183aa2b61b40fb334bc4b22
 `;
 
 export const BtnLeftWrapper = styled.div`
