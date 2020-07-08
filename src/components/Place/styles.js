@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const CardsContainer = styled.div`
   margin: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit,200px);
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-gap: 24px;
   justify-content: center;
 `;

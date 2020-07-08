@@ -1,17 +1,18 @@
 import React from 'react';
+import { AiFillHeart as Heart } from 'react-icons/ai';
 
-import { Item, Details, Like, Title, Image, Price } from './styles';
+import { Item, Details, Button, Title, Image, ImageContainer, Price, Location } from './styles';
 
 const PlaceItem = ({ mainImage, name, location, price }) => (
   <Item>
-    <Image src={mainImage} alt='Roomie' />
+    <ImageContainer>
+      <Image src={mainImage} alt='Roomie' />
+      <Button onClick={(e) => alert('liked!')}><Heart color='#BACD25' size='24px' /></Button>
+    </ImageContainer>
     <Details>
-      <Like>Heart</Like>
       <Title>{name}</Title>
-      <Price>
-        {location}
-        <span>{price}</span>
-      </Price>
+      <Location>{location}</Location>
+      <Price>{`$ ${price} COP`}</Price>
     </Details>
   </Item>
 );
