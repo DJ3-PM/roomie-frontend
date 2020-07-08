@@ -1,26 +1,15 @@
 import styled from 'styled-components';
 
-export const Section = styled.section`
-     display: flex;
-     max-width: 940px;
-     margin: 40px auto;
-
-     @media screen and (max-width: 768px) {
-        flex-direction: column;
-     }
- `;
-
 export const HostInfo = styled.section`
      display: flex;
      flex-direction: column;
-     justify-content: space-around;
+     justify-content: center;
      align-items: center;
      background: #ededed;
-     width: 40%;
-     padding: 15px;
+     margin: 30px;
      @media screen and (max-width: 768px) {
-        width: 85%;
-        margin: 20px auto;
+        flex-direction: column;
+        padding: 15px;
      }
  `;
 
@@ -80,17 +69,4 @@ export const BtnContact = styled.a`
      &:hover {
          font-weight: bold;
      }
- `;
-
-export const DescriptionRoom = styled.section`
-     background: #fefefe;
- `;
-
-export const DescriptionRoomInfo = styled.div`
-     margin: 0 30px 30px;
- `;
-
-export const DescriptionRoomText = styled.p`
-     line-height: 1.5;
-     text-align: justify;
  `;

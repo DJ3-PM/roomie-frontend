@@ -6,6 +6,7 @@ import Layout from '../../components/Layout';
 import Carousel from '../../components/Carousel';
 import Host from '../../components/Host';
 import Loader from '../../components/Loader';
+import { Wrapper, Name, DescriptionRoom, DescriptionRoomText } from './styles';
 
 const usePlaceFetch = (placeId) => {
   const [place, setPlace] = useState({});
@@ -39,16 +40,22 @@ const ViewRoom = ({ match }) => {
 
   const { placeId } = match.params;
   const { place, images, loading } = usePlaceFetch(placeId);
+  const { name, description } = place;
 
   const renderHomeView = () => {
     return (
       <>
         {
           loading ? <Loader /> : (
-            <>
-              <Carousel images={images} />
+            <Wrapper>
               <Host {...place} />
-            </>
+              <DescriptionRoom>
+                <Name>{name}</Name>
+                <Carousel images={images} />
+                <h3>Descripción</h3>
+                <DescriptionRoomText>{description}</DescriptionRoomText>
+              </DescriptionRoom>
+            </Wrapper>
           )
         }
       </>
