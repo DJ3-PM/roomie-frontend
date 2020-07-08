@@ -57,8 +57,7 @@ background-image: url(${searchIcon});
 background-repeat: no-repeat;
 background-position: center;
 align-self: center;
-backgrou
-nd-size: contain;
+background-size: contain;
 width: 18px;
 height: 18px;
 `;
