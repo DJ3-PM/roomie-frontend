@@ -75,18 +75,6 @@ const Host = ({ description, price, wifi, bath, cleaning, closet, tv, parking, p
           <h3>DESCRIPCION</h3>
           <DescriptionRoomText>{description}</DescriptionRoomText>
         </DescriptionRoomInfo>
-        <DescriptionRoomInfo>
-          <h3>EL ESPACIO</h3>
-          <DescriptionRoomText>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore molestias itaque iure laudantium nisi corrupti odio asperiores odit eos iste quae, dicta fuga minima sed perspiciatis at quibusdam neque nam!
-          </DescriptionRoomText>
-        </DescriptionRoomInfo>
-        <DescriptionRoomInfo>
-          <h3>ACCESO DE LOS HUÉSPEDES</h3>
-          <DescriptionRoomText>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolore? Facere repudiandae temporibus tenetur veritatis, mollitia debitis dolores sapiente earum ipsam illo voluptatum magnam voluptatibus commodi delectus a deserunt voluptates!Asperiores veritatis molestiae nemo, quae sequi numquam non nam ullam et consequatur, necessitatibus quaerat vel doloremque? Quam ipsa odio explicabo placeat culpa natus? Animi aperiam consectetur iste suscipit aliquid quod.
-          </DescriptionRoomText>
-        </DescriptionRoomInfo>
       </DescriptionRoom>
     </Section>
   );

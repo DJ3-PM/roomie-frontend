@@ -17,7 +17,7 @@ const NotFound = () => {
             Sorry, nothing here
             <span role='img' aria-label='emoji corazon roto'>😖💔</span>
           </MsgError>
-          <BtnBackHome>Back Home</BtnBackHome>
+          <BtnBackHome to='/'>Back To Home</BtnBackHome>
         </MainContent>
       </Wrapper>
     </Layout>
