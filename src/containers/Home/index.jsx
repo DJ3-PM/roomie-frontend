@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
+import Hero from '../../components/Hero';
 import Search from '../../components/Search';
 import Categories from '../../components/Categories';
 import Place from '../../components/Place';
@@ -33,7 +34,9 @@ const Home = () => {
 
   return (
     <Layout>
-      <Search />
+      <Hero>
+        <Search onChange={(e) => console.log(e.target.value)} />
+      </Hero>
       <Wrapper>
         <Categories title='Encuentra el lugar perfecto'>
           {
