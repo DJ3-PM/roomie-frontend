@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import heroBackground from '../../assets/static/bg-hero.jpg';
 import searchIcon from '../../assets/static/search.svg';
 
 export const Hero = styled.div`
-    background-image: url(${heroBackground});
+    background-image: url('https://buscando-roomie.s3.us-east-2.amazonaws.com/bg-hero.jpg');
     background-position: center;
     height: 60vh;
     background-repeat: no-repeat;
@@ -58,7 +57,8 @@ background-image: url(${searchIcon});
 background-repeat: no-repeat;
 background-position: center;
 align-self: center;
-background-size: contain;
+backgrou
+nd-size: contain;
 width: 18px;
 height: 18px;
 `;
