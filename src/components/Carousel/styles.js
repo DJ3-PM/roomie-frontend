@@ -60,12 +60,20 @@ export const BtnRightWrapper = styled.div`
 
 export const Button = styled.button`
     border: none;
-    background: transparent;
+    background: white;
     outline: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
+    cursor: pointer;
 
     &:hover {
-        cursor: pointer;
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
 `;
 

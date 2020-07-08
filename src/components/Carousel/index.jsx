@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import { AiFillCaretLeft as Left, AiFillCaretRight as Right } from 'react-icons/ai';
 import CarouselItem from '../CarouselItem';
 import ImagesList from '../ImagesList';
 import { Section, CarouselWrapper, BtnLeftWrapper, BtnRightWrapper, Button, BtnImg, Image } from './styles';
-import btnLeft from '../../assets/static/left.svg';
-import btnRight from '../../assets/static/right.svg';
 
 const Carousel = ({ images = [] }) => {
   const [mainImage, setMainImage] = useState(images[0]);
@@ -18,13 +17,13 @@ const Carousel = ({ images = [] }) => {
       <CarouselWrapper>
         <BtnLeftWrapper>
           <Button>
-            <BtnImg src={btnLeft} />
+            <Left size='25px' color='#BACD25' />
           </Button>
         </BtnLeftWrapper>
         <CarouselItem active={true} id='image1' image={mainImage} />
         <BtnRightWrapper>
           <Button>
-            <BtnImg src={btnRight} />
+            <Right size='25px' color='#BACD25' />
           </Button>
         </BtnRightWrapper>
       </CarouselWrapper>

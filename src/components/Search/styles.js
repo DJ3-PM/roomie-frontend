@@ -16,7 +16,6 @@ export const SearchContainer = styled.div`
     
 `;
 
-
 export const SearchItem = styled.input`
     width: inherit;
     height: 40px;
@@ -25,7 +24,6 @@ export const SearchItem = styled.input`
     background: none;
     
 `;
-
 
 export const Title = styled.h2`
     text-align: center;
