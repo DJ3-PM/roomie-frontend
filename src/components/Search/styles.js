@@ -15,11 +15,7 @@ export const SearchContainer = styled.div`
     }
     
 `;
-// display: flex;
-// justify-content: center;
-// flex-direction: column;
-// align-items: center;
-// height: 100%;
+
 
 export const SearchItem = styled.input`
     width: inherit;
@@ -29,11 +25,7 @@ export const SearchItem = styled.input`
     background: none;
     
 `;
-// width: 80%;
-// height: 55px;
-// margin-bottom: 25px;
 
-// border: none;
 
 export const Title = styled.h2`
     text-align: center;

@@ -8,7 +8,11 @@ export const CardsContainer = styled.div`
   grid-gap: 24px;
   justify-content: center;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 480px) {
     grid-template-columns: 1fr;
   }
 `;
