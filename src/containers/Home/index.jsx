@@ -10,9 +10,12 @@ import Place from '../../components/Place';
 import PlaceItem from '../../components/PlaceItem';
 import Loader from '../../components/Loader';
 
+import slugify from '../../utils/slugify';
+
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [places, setPlaces] = useState([]);
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
 
   useEffect(() => {
     const fetchPlaces = async () => {
@@ -21,8 +24,8 @@ const Home = () => {
       try {
         const { data } = await axios.get('https://peaceful-bastion-02967.herokuapp.com/api/places');
         const places = data.data;
-        console.log('fetchPlaces -> places', places);
         setPlaces(places);
+        setFilteredPlaces(places);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -32,10 +35,17 @@ const Home = () => {
     fetchPlaces();
   }, []);
 
+  const handleSearch = (event) => {
+    const { target } = event;
+    console.log(slugify(target.value));
+    const filteredPlaces = places.filter((place) => slugify(place.location).includes(slugify(target.value.trim())));
+    setFilteredPlaces(filteredPlaces);
+  };
+
   return (
     <Layout>
       <Hero>
-        <Search onChange={(e) => console.log(e.target.value)} />
+        <Search onChange={handleSearch} />
       </Hero>
       <Wrapper>
         <Categories title='Encuentra el lugar perfecto'>
@@ -44,7 +54,7 @@ const Home = () => {
               <Place>
                 {
                 // eslint-disable-next-line react/jsx-props-no-spreading
-                  places.map((place) => <PlaceItem key={place._id} {...place} />)
+                  filteredPlaces.map((place) => <PlaceItem key={place._id} {...place} />)
                 }
               </Place>
             )
