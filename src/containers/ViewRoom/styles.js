@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     display: flex;
-    margin: 20px 0;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
 
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
@@ -11,6 +13,7 @@ export const Wrapper = styled.div`
 
 export const Name = styled.h1`
     margin: 0 0 30px 0;
+    text-align: center;
 `;
 
 export const DescriptionRoom = styled.section`

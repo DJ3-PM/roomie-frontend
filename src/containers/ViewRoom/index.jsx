@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 import axios from 'axios';
 import Layout from '../../components/Layout';
 import Carousel from '../../components/Carousel';
@@ -69,9 +68,4 @@ const ViewRoom = ({ match }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    place: state.place,
-  };
-};
-export default connect(mapStateToProps, null)(ViewRoom);
+export default ViewRoom;
