@@ -1,19 +1,20 @@
 import React from 'react';
-import { HostInfo, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact } from './styles';
-import wifiIcon from '../../assets/static/wifi.svg';
-import bathIcon from '../../assets/static/baño.svg';
-import parkingIcon from '../../assets/static/parking.svg';
-import whatsappIcon from '../../assets/static/whatsapp.svg';
-import emailIcon from '../../assets/static/email.svg';
+import { BsWifi } from 'react-icons/bs';
+import { FaBath, FaParking, FaWhatsapp } from 'react-icons/fa';
+import { MdScreenShare } from 'react-icons/md';
+import { AiOutlineMail as Email } from 'react-icons/ai';
+import { GiVacuumCleaner as Cleaning, GiClosedDoors as Closet } from 'react-icons/gi';
+import { HostInfo, HostAbout, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact } from './styles';
 
 const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: host }) => {
-  const customMessage = `Hola%20estoy%20interesado%20en%20el%20departamento`;
+  const customMessage = 'Hola%20estoy%20interesado%20en%20el%20departamento';
 
   return (
     <HostInfo>
       <HostInfoDetails>
         <HostInfoImg src={host.avatar} alt='Imagen del host' />
         <h3>{`${host.firstname} ${host.lastname}`}</h3>
+        <HostAbout>{`${host.about}`}</HostAbout>
         <p>{`${price} COP / Día`}</p>
       </HostInfoDetails>
       <HostServices>
@@ -22,7 +23,9 @@ const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: hos
           wifi ? (
             <>
               <HostServicesDetails>
-                <HostServicesImg src={wifiIcon} alt='Imagen del servicio wifi' />
+                <HostServicesImg>
+                  <BsWifi size='25px' />
+                </HostServicesImg>
                 <HostServicesName>Incluye Wifi</HostServicesName>
               </HostServicesDetails>
             </>
@@ -33,7 +36,9 @@ const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: hos
           bath ? (
             <>
               <HostServicesDetails>
-                <HostServicesImg src={bathIcon} alt='Imagen del servicio baño' />
+                <HostServicesImg>
+                  <FaBath size='25px' />
+                </HostServicesImg>
                 <HostServicesName>Baño Privado</HostServicesName>
               </HostServicesDetails>
             </>
@@ -43,7 +48,9 @@ const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: hos
           parking ? (
             <>
               <HostServicesDetails>
-                <HostServicesImg src={parkingIcon} alt='Imagen del servicio parking' />
+                <HostServicesImg>
+                  <FaParking size='25px' />
+                </HostServicesImg>
                 <HostServicesName>Parqueadero</HostServicesName>
               </HostServicesDetails>
             </>
@@ -53,7 +60,33 @@ const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: hos
           tv ? (
             <>
               <HostServicesDetails>
-                <HostServicesImg src={wifiIcon} alt='Imagen del servicio netflix' />
+                <HostServicesImg>
+                  <MdScreenShare size='25px' />
+                </HostServicesImg>
+                <HostServicesName>Netflix</HostServicesName>
+              </HostServicesDetails>
+            </>
+          ) : ''
+        }
+        {
+          closet ? (
+            <>
+              <HostServicesDetails>
+                <HostServicesImg>
+                  <Closet size='25px' />
+                </HostServicesImg>
+                <HostServicesName>Netflix</HostServicesName>
+              </HostServicesDetails>
+            </>
+          ) : ''
+        }
+        {
+          cleaning ? (
+            <>
+              <HostServicesDetails>
+                <HostServicesImg>
+                  <Cleaning size='25px' />
+                </HostServicesImg>
                 <HostServicesName>Netflix</HostServicesName>
               </HostServicesDetails>
             </>
@@ -62,10 +95,14 @@ const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: hos
       </HostServices>
       <ContactWrapper>
         <BtnContact href={`https://wa.me/${host.whatsapp}/?text=${customMessage}`}>
-          <HostServicesImg src={whatsappIcon} />
+          <HostServicesImg>
+            <FaWhatsapp size='25px' />
+          </HostServicesImg>
         </BtnContact>
         <BtnContact href={`mailto:${host.contactEmail}`}>
-          <HostServicesImg src={emailIcon} />
+          <HostServicesImg>
+            <Email size='25px' />
+          </HostServicesImg>
         </BtnContact>
       </ContactWrapper>
     </HostInfo>

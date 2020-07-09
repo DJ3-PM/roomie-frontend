@@ -7,6 +7,7 @@ export const HostInfo = styled.section`
      align-items: center;
      background: #ededed;
      margin: 30px;
+     padding: 15px;
      @media screen and (max-width: 768px) {
         flex-direction: column;
         padding: 15px;
@@ -28,6 +29,10 @@ export const HostInfoImg = styled.img`
      margin-bottom: 15px;
  `;
 
+export const HostAbout = styled.p`
+    text-align: center;
+`;
+
 export const HostServices = styled.div`
      display: flex;
      flex-direction: column;
@@ -43,10 +48,8 @@ export const HostServicesDetails = styled.div`
      width: 100%;
  `;
 
-export const HostServicesImg = styled.img`
+export const HostServicesImg = styled.div`
      align-self: center;
-     width: 25px;
-     height: 25px;
  `;
 
 export const HostServicesName = styled.p`
