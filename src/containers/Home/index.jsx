@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Hero from '../../components/Hero';
@@ -66,10 +65,4 @@ const Home = () => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    places: state.places,
-  };
-};
-
-export default connect(mapStateToProps, null)(Home);
+export default Home;

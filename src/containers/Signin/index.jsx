@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { Context } from '../../Context';
 
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
@@ -9,6 +10,7 @@ import FormButton from '../../components/FormButton';
 
 const Signin = () => {
   const [form, setForm] = useState({});
+  const { activateIsHost, activateAvatar } = useContext(Context);
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +27,10 @@ const Signin = () => {
           password,
         },
       });
-      console.log('data', data);
+      const { profile } = data.data;
+      console.log('profile', profile);
+      activateIsHost(profile.isHost);
+      activateAvatar(profile.avatar);
 
     } catch (error) {
       console.log(error);
