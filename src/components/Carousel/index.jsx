@@ -12,16 +12,32 @@ const Carousel = ({ images = [] }) => {
     setMainImage(images[target.id]);
   };
 
+  // This could be improved...
+  const handleLeft = () => {
+    let newPosition = images.indexOf(mainImage) - 1;
+    if (newPosition < 0) {
+      newPosition = images.length - 1;
+    }
+    setMainImage(images[newPosition]);
+  };
+  const handleRight = () => {
+    let newPosition = images.indexOf(mainImage) + 1;
+    if (newPosition >= images.length) {
+      newPosition = 0;
+    }
+    setMainImage(images[newPosition]);
+  };
+
   return (
     <Section>
       <CarouselWrapper>
-        <BtnLeftWrapper>
+        <BtnLeftWrapper onClick={handleLeft}>
           <Button>
             <Left size='25px' color='#BACD25' />
           </Button>
         </BtnLeftWrapper>
         <CarouselItem active={true} id='image1' image={mainImage} />
-        <BtnRightWrapper>
+        <BtnRightWrapper onClick={handleRight}>
           <Button>
             <Right size='25px' color='#BACD25' />
           </Button>
