@@ -76,13 +76,3 @@ export const Button = styled.button`
         transform: scale(1.2);
     }
 `;
-
-export const BtnImg = styled.img`
-    width: 50px;
-    height: 50px;
-
-    @media screen and (max-width: 768px) {
-        width: 35px;
-        height: 35px;
-    }
-`;
