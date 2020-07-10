@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -10,6 +11,8 @@ export const HeaderStyle = styled.header`
 `;
 
 export const Nav = styled.nav`
+  display: flex;
+  align-items: center;
   &:hover ul {
     display: block;
   }
@@ -20,12 +23,34 @@ export const Logo = styled.img`
   height:38px;
 `;
 
+export const ButtonLink = styled(RouterLink)`
+  display: flex;
+  align-items: center;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 3px solid #95a41f;
+  cursor: pointer;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
+  
+  &:hover {
+    background: #95a41f;
+    border-color: #778319;
+  }
+`;
+
 export const Avatar = styled.img`
   display: flex;
   cursor: pointer;
-  width: 62px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin: 0 15px;
+  object-fit: cover;
 `;
 
 export const Ul = styled.ul`
