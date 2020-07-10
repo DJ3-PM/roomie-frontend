@@ -10,7 +10,15 @@ import FormButton from '../../components/FormButton';
 
 const Signin = () => {
   const [form, setForm] = useState({});
-  const { activateIsHost, activateAvatar } = useContext(Context);
+
+  const {
+    activateIsHost,
+    activateAvatar,
+    activateUserId,
+    activateProfileId,
+    activateFirstname,
+    activateLastname,
+  } = useContext(Context);
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -27,10 +35,16 @@ const Signin = () => {
           password,
         },
       });
-      const { profile } = data.data;
-      console.log('profile', profile);
+      const { profile, userId } = data.data;
+      console.log(data.data);
+
       activateIsHost(profile.isHost);
       activateAvatar(profile.avatar);
+      activateProfileId(profile._id);
+      activateFirstname(profile.firstname);
+      activateLastname(profile.lastname);
+      activateUserId(userId);
+      alert('Sign in succesfully!');
 
     } catch (error) {
       console.log(error);
@@ -47,7 +61,6 @@ const Signin = () => {
     });
   };
 
-  console.log(form);
   return (
     <Layout>
       <Wrapper>
