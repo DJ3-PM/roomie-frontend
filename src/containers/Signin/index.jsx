@@ -28,7 +28,7 @@ const Signin = () => {
 
     try {
       const { data } = await axios({
-        url: 'http://localhost:8000/api/auth/sign-in',
+        url: 'https://peaceful-bastion-02967.herokuapp.com/api/auth/sign-in',
         method: 'post',
         auth: {
           username,
