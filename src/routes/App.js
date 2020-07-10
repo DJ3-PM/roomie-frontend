@@ -12,7 +12,8 @@ import NotFound from '../containers/NotFound';
 import Favorites from '../containers/Favorites';
 
 const App = () => {
-  const { userId: isLogged, isHost } = useContext(Context);
+  const { userId, isHost } = useContext(Context);
+  const isLogged = userId && isHost;
 
   return (
     <BrowserRouter>

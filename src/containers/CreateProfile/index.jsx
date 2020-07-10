@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { Context } from '../../Context';
 
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
@@ -15,10 +16,12 @@ import userDefault from '../../assets/static/userDefault.svg';
 import { Avatar } from './styles';
 
 const CreateProfile = () => {
+  const { userId } = useContext(Context);
   const [profileImage, setProfileImage] = useState(userDefault);
 
   const [form, setForm] = useState({
     isHost: false,
+    userId,
   });
 
   const handleTextInput = (event) => {
@@ -68,6 +71,7 @@ const CreateProfile = () => {
       try {
         const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/profile', myDataForm, {});
         alert(data.message);
+        window.location.href = '/signin';
       } catch (error) {
         const { message } = error.response.data;
         alert(message);
@@ -98,7 +102,6 @@ const CreateProfile = () => {
               </>
             )
           }
-          <Input name='userId' onChange={handleTextInput} placeholder='USER ID (TEST)' />
           <FormButton text='Done' />
         </Form>
       </Wrapper>
