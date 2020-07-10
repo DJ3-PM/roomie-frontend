@@ -1,12 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { AiFillHeart as Heart } from 'react-icons/ai';
+import React, { useContext } from 'react';
+import axios from 'axios';
+import { RiHeartAddLine as Heart } from 'react-icons/ri';
+import { Context } from '../../Context';
 
-import { Item, Details, Button, Title, Image, ImageContainer, Price, Location } from './styles';
+import { Item, Details, Button, Title, Image, ImageContainer, Price, Location, Link } from './styles';
 
 const PlaceItem = ({ _id, mainImage, name, location, price }) => {
-  const handleOnClick = (event) => {
-    console.log(event.target.id);
+  const { profileId } = useContext(Context);
+
+  const handleOnClick = async (event) => {
+    const { target } = event;
+    console.log(target.id);
+    try {
+      const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
+        profileId,
+        placeId: target.id,
+      });
+      alert(data.message);
+    } catch (error) {
+      console.log(error);
+    }
+
   };
   return (
     <Item>
@@ -17,8 +31,14 @@ const PlaceItem = ({ _id, mainImage, name, location, price }) => {
       <Details>
         <Title>{name}</Title>
         <Location>{location}</Location>
-        <Link to={`/places/${_id}`} style={{ textDecoration: 'none' }}>
-          <Price>{`$ ${price} COP`}</Price>
+        <Price>
+          {`$${price} COP `}
+          <span>
+            {' per month'}
+          </span>
+        </Price>
+        <Link to={`/places/${_id}`}>
+          Learn more
         </Link>
       </Details>
     </Item>
