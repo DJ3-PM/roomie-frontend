@@ -24,8 +24,8 @@ const Header = () => {
         }
 
         <Ul>
-          <Li>Anfitrión</Li>
-          <Li>Huésped</Li>
+          <Li>Host</Li>
+          <Li>Guest</Li>
         </Ul>
       </Nav>
     </HeaderStyle>
