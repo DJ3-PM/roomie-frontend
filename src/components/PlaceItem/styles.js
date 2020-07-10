@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const ImageContainer = styled.div`
   height: 250px;
@@ -50,6 +51,7 @@ export const Details = styled.div`
 `;
 
 export const Title = styled.h2`
+  color: #212121;
   font-size: 16px;
   margin: 5px 0;
   padding-bottom: 10px;
@@ -58,14 +60,35 @@ export const Title = styled.h2`
 
 export const Location = styled.p`
   text-transform: capitalize;
-  color: gray;
+  color: #9e9e9e;
 `;
 
 export const Price = styled.p`
-  background: var(--accent-color);
-  color: white;
+  color: #212121;
   font-weight: bold;
+  font-size: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & span {
+    font-size: 14px;
+    font-weight: normal;
+    color: gray;
+  }
+`;
+
+export const Link = styled(RouterLink)`
+  background: var(--accent-color);
+  text-decoration: none;
+  color: white;
   padding: 12px 24px;
   border-radius: 30px;
+  font-weight: bold;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
+  
+  &:hover {
+    background: #95a41f;
+  }
 `;
 
