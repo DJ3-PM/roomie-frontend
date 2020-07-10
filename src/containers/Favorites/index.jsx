@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { Context } from '../../Context';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Categories from '../../components/Categories';
@@ -7,35 +8,37 @@ import Place from '../../components/Place';
 import PlaceItem from '../../components/PlaceItem';
 import Loader from '../../components/Loader';
 
-
 const Favorites = () => {
   const [loading, setLoading] = useState(true);
-  const [places, setPlaces] = useState([]);
-  const [filteredPlaces, setFilteredPlaces] = useState([]);
+  const { profileId } = useContext(Context);
+
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const fetchPlaces = async () => {
+    const fetchFavorites = async () => {
       setLoading(true);
 
       try {
-        const { data } = await axios.get('https://peaceful-bastion-02967.herokuapp.com/api/places');
-        const places = data.data;
-        setPlaces(places);
-        setFilteredPlaces(places);
+        const { data } = await axios.get('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
+          headers: {
+            'profileid': profileId,
+          },
+        });
+
+        const favoritesArray = data.data;
+        setFavorites(favoritesArray);
         setLoading(false);
       } catch (error) {
         console.log(error);
+        setLoading(false);
       }
     };
 
-    fetchPlaces();
+    fetchFavorites();
   }, []);
-
- 
 
   return (
     <Layout>
-    
       <Wrapper>
         <Categories title='Favorites'>
           {
@@ -43,7 +46,7 @@ const Favorites = () => {
               <Place>
                 {
                 // eslint-disable-next-line react/jsx-props-no-spreading
-                  filteredPlaces.map((place) => <PlaceItem key={place._id} {...place} />)
+                  favorites.map((favorite) => <PlaceItem key={favorite._id} {...favorite} />)
                 }
               </Place>
             )
