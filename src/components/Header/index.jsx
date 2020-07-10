@@ -7,7 +7,26 @@ import avatarImg from '../../assets/static/avatar.jpg';
 import { Context } from '../../Context';
 
 const Header = () => {
-  const { avatar, isHost } = useContext(Context);
+  const {
+    avatar,
+    isHost,
+    removeIsHost,
+    removeAvatar,
+    removeUserId,
+    removeProfileId,
+    removeFirstname,
+    removeLastname,
+  } = useContext(Context);
+
+  const handleLogOut = () => {
+    removeIsHost();
+    removeAvatar();
+    removeUserId();
+    removeProfileId();
+    removeFirstname();
+    removeLastname();
+    window.location.href = '/signin';
+  };
 
   return (
 
@@ -33,8 +52,8 @@ const Header = () => {
               <Avatar src={avatarImg} alt='Avatar' />
           }
           <Ul>
-            <Li>Favorites</Li>
-            <Li>Signout</Li>
+            <Li><Link to='/favorites'>Favorites</Link></Li>
+            <Li><Link to='#' onClick={handleLogOut}>Signout</Link></Li>
           </Ul>
         </Nav>
 
