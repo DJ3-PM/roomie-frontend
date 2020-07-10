@@ -10,6 +10,11 @@ export const HeaderStyle = styled.header`
   border-bottom: 3px solid #c3d233;
 `;
 
+export const Div = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -57,12 +62,11 @@ export const Ul = styled.ul`
   display: none;
   background: #f4f4f4;
   width: 100px;
-  height: 75px;
   list-style: none;
   position: absolute;
   top: 55px;
-  right: 30px;
   padding: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   
   &:hover {
     display: block;
@@ -70,7 +74,8 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-  margin: 10px;
+  text-align: center;
+  padding: 12px 10px;
   &:nth-child(2) {
     border-top: 2px solid #c3d233;
   }
