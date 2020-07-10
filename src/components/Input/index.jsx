@@ -11,7 +11,7 @@ const InputComponent = ({ onChange, name = '', type = 'text', text = '', placeho
   return (
     <>
       <Label htmlFor={name}>{text}</Label>
-      <Input onChange={onChange} type={type} name={name} id='' placeholder={placeholder || capitalize(name)} required={required} />
+      <Input onChange={onChange} type={type} name={name} placeholder={placeholder || capitalize(name)} required={required} />
     </>
   );
 };
