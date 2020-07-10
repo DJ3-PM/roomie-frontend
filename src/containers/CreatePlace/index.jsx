@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { Context } from '../../Context';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Gallery from '../../components/Gallery';
@@ -13,7 +14,6 @@ import FormButton from '../../components/FormButton';
 
 import { SectionTitle, CheckboxArranger } from './styles';
 
-// TEST profileID: 5f0264cafb88f00456d317df
 const transformFilesToURLs = ({ files }) => {
   const auxArray = [];
   Object.keys(files).forEach((entry) => {
@@ -23,7 +23,11 @@ const transformFilesToURLs = ({ files }) => {
 };
 
 const CreatePlace = () => {
-  const [form, setForm] = useState({});
+  const { profileId } = useContext(Context);
+
+  const [form, setForm] = useState({
+    profileId,
+  });
   const [imageList, setImageList] = useState([]);
   const [mainImage, setMainImage] = useState([]);
   const [zones, setZones] = useState([]);
@@ -48,6 +52,7 @@ const CreatePlace = () => {
     event.preventDefault();
     console.log('submiting...');
     const myDataForm = new FormData();
+
     Object.keys(form).forEach((entry) => {
       if (entry === 'images') {
         for (let i = 0; i < form.images.length; i++) {
@@ -60,11 +65,9 @@ const CreatePlace = () => {
       }
     });
 
-    debugger;
     const sendDataForm = async () => {
       try {
         const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/places', myDataForm, {});
-        // const { data } = await axios.post('http://localhost:8000/api/places', myDataForm, {});
         alert(data.message);
       } catch (error) {
         const { message } = error.response.data;
@@ -184,7 +187,6 @@ const CreatePlace = () => {
           <Input name='price' onChange={handleTextInput} type='number' />
           <Input name='size' onChange={handleTextInput} type='number' />
           <TextArea name='description' onChange={handleTextInput} text='Tell us more about your room!' />
-          <Input name='profileId' onChange={handleTextInput} placeholder='PROFILE ID (TEST)' />
           <FormButton text='Done' />
         </Form>
       </Wrapper>
