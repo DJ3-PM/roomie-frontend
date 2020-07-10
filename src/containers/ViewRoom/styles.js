@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
     display: flex;
     margin: 20px auto;
     width: 90%;
-    max-width: 1200px;
 
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;

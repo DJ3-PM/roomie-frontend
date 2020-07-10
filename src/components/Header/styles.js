@@ -4,7 +4,7 @@ export const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 15px;
+  margin: 0 15px 15px;
   height: 80px;
   border-bottom: 3px solid #c3d233;
 `;
@@ -50,13 +50,3 @@ export const Li = styled.li`
     border-top: 2px solid #c3d233;
   }
 `;
-
-// export const a = styled(LinkRouter)`
-//   color: black;
-//   text-decoration: none;
-//   padding: 10px;
-
-//   &:hover {
-//     text-decoration: underline;
-//   }
-// `;
