@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Context } from '../Context';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import Home from '../containers/Home';
 import Signin from '../containers/Signin';
@@ -10,16 +11,18 @@ import ViewRoom from '../containers/ViewRoom';
 import NotFound from '../containers/NotFound';
 
 const App = () => {
+  const { userId: isLogged, isHost } = useContext(Context);
+
   return (
     <BrowserRouter>
       <GlobalStyle />
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/signin' component={Signin} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/create/place' component={CreatePlace} />
-        <Route exact path='/create/profile' component={CreateProfile} />
-        <Route exact path='/places/:placeId' component={ViewRoom} />
+        <Route exact path='/' component={isLogged ? Home : Signin} />
+        <Route exact path='/signin' component={isLogged ? Home : Signin} />
+        <Route exact path='/signup' component={isLogged ? Home : Signup} />
+        <Route exact path='/create/place' component={isLogged && isHost ? CreatePlace : Home} />
+        <Route exact path='/create/profile' component={isLogged && (isHost !== null) ? Home : CreateProfile} />
+        <Route exact path='/places/:placeId' component={isLogged ? ViewRoom : Signin} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
