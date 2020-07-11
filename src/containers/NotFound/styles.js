@@ -11,11 +11,6 @@ export const MainContent = styled.div`
     background: #efefef;
 `;
 
-export const Image404 = styled.img`
-    width: 40%;
-    height: 40%;
-`;
-
 export const Title = styled.h1`
     margin: 0;
     font-size: 100px;

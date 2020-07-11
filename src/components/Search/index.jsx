@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchContainer, SearchItem, Title, SearchIconItem } from './styles';
+import { SearchContainer, SearchItem, MainTitle, Title, SearchIconItem } from './styles';
 
 const Search = ({ onChange }) => {
   return (
@@ -8,7 +8,7 @@ const Search = ({ onChange }) => {
         <SearchItem onChange={onChange} type='search' placeholder='Find your next roomie' />
         <SearchIconItem />
       </SearchContainer>
-      <Title>Un lugar para vivir momentos únicos</Title>
+      <Title>Los mejores lugares de Medellín <br/> para vivir momentos únicos</Title>
     </>
   );
 };

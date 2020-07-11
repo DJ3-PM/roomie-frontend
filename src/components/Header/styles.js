@@ -5,7 +5,7 @@ export const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 15px 15px;
+  margin: 0 15px;
   height: 80px;
   border-bottom: 3px solid #c3d233;
 `;
@@ -24,8 +24,8 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-  width:62px; 
-  height:38px;
+  width: 62px;
+  height: 38px;
 `;
 
 export const ButtonLink = styled(RouterLink)`
@@ -45,6 +45,10 @@ export const ButtonLink = styled(RouterLink)`
   &:hover {
     background: #95a41f;
     border-color: #778319;
+  }
+  @media screen and (max-width: 375px) {
+    padding: 0;
+    text-align: center;
   }
 `;
 
@@ -78,5 +82,13 @@ export const Li = styled.li`
   padding: 12px 10px;
   &:nth-child(2) {
     border-top: 2px solid #c3d233;
+  }
+`;
+
+export const LinkLi = styled(RouterLink)`
+  text-decoration: none;
+  color: black;
+  :hover {
+    font-weight: bold;
   }
 `;
