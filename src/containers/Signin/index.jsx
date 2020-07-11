@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { Context } from '../../Context';
-
+import { AiOutlineUser } from 'react-icons/ai';
+import { FiLock } from 'react-icons/fi';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import FormButton from '../../components/FormButton';
+import Description from '../../components/Description';
 
 const Signin = () => {
   const [form, setForm] = useState({});
@@ -64,8 +66,11 @@ const Signin = () => {
   return (
     <Layout>
       <Wrapper>
-        <Form onSubmit={handleOnSubmit} title='Sign in'>
+        <Form onSubmit={handleOnSubmit} title='Welcome Back!'>
+          <Description text='Please login to your account.'/>
+          <p><AiOutlineUser/>User</p>
           <Input name='username' onChange={handleTextInput} type='email' placeholder='Email' required />
+          <p><FiLock/>Password</p>
           <Input name='password' onChange={handleTextInput} type='password' placeholder='Password' required />
           <FormButton text='Sign in!' />
         </Form>
