@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import searchIcon from '../../assets/static/search.svg';
 
+export const MainTitle = styled.h1`
+  position: absolute;
+  top: 115px;
+  text-align: center;
+`;
+
 export const SearchContainer = styled.div`
    width: 80%;
     border-radius: 100px;

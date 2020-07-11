@@ -12,4 +12,5 @@ export const Div = styled.div`
   flex-direction: column;
   color: white;
   display: flex;
+  margin-top: 20px;
 `;

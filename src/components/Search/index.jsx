@@ -1,9 +1,10 @@
 import React from 'react';
-import { SearchContainer, SearchItem, Title, SearchIconItem } from './styles';
+import { SearchContainer, SearchItem, MainTitle, Title, SearchIconItem } from './styles';
 
 const Search = ({ onChange }) => {
   return (
     <>
+      <MainTitle>Los mejores lugares de Medellín</MainTitle>
       <SearchContainer>
         <SearchItem onChange={onChange} type='search' placeholder='Find your next roomie' />
         <SearchIconItem />
