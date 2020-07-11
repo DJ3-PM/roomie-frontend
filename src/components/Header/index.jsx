@@ -4,6 +4,7 @@ import { AiFillHome as HouseIcon } from 'react-icons/ai';
 import { HeaderStyle, Nav, Logo, ButtonLink, Avatar, Ul, Li, Div } from './styles';
 import logoImg from '../../assets/static/logo.png';
 import avatarImg from '../../assets/static/avatar.jpg';
+import DefaultUser from '../DefaultUser';
 import { Context } from '../../Context';
 
 const Header = () => {
@@ -49,14 +50,16 @@ const Header = () => {
         }
         <Nav>
           {
-            avatar ?
-              <Avatar src={avatar} alt='Avatar' /> :
-              <Avatar src={avatarImg} alt='Avatar' />
+            avatar ? (
+              <>
+                <Avatar src={avatar} alt='Avatar' />
+                <Ul>
+                  <Li><Link to='/favorites'>Favorites</Link></Li>
+                  <Li><Link to='#' onClick={handleLogOut}>Signout</Link></Li>
+                </Ul>
+              </>
+            ) : <DefaultUser />
           }
-          <Ul>
-            <Li><Link to='/favorites'>Favorites</Link></Li>
-            <Li><Link to='#' onClick={handleLogOut}>Signout</Link></Li>
-          </Ul>
         </Nav>
 
       </Div>
