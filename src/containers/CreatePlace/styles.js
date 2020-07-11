@@ -7,6 +7,10 @@ export const CheckboxArranger = styled.div`
   /* box-shadow: inset 0 2px 4px 0 rgba(0,0,0,.15); */
   padding: 10px 5px;
   border-radius: 5px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, auto);
+  }
 `;
 
 export const SectionTitle = styled.h2`

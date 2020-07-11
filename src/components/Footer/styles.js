@@ -7,7 +7,8 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   background: #f4f4f4;
-  height: 50px;
+  height: 80px;
+  padding: 0 15px;
 `;
 
 export const Link = styled(LinkRouter)`
@@ -17,5 +18,8 @@ export const Link = styled(LinkRouter)`
   
   &::before {
     content: '·';
+  }
+  &:hover {
+    font-weight: bold;
   }
 `;

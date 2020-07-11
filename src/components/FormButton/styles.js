@@ -11,6 +11,9 @@ export const Button = styled.button`
   border: solid 2px #3981CC;
   cursor: pointer;
   padding: 12px 24px;
+  &:hover {
+    font-weight: bold;
+  }
   border-radius: 10px;
   margin-top: 2rem;
   &:hover { transition: linear 0.2s;
