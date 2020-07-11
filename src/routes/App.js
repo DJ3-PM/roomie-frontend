@@ -13,7 +13,7 @@ import Favorites from '../containers/Favorites';
 
 const App = () => {
   const { userId, isHost } = useContext(Context);
-  const isLogged = userId && isHost;
+  const isLogged = userId && (isHost !== null);
 
   return (
     <BrowserRouter>

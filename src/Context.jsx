@@ -31,7 +31,7 @@ const Provider = ({ children }) => {
     isHost,
     activateIsHost: (token) => {
       window.sessionStorage.setItem('isHost', token);
-      setIsHost(true);
+      setIsHost(window.sessionStorage.getItem('isHost') === 'true');
     },
     removeIsHost: () => {
       window.sessionStorage.removeItem('isHost');

@@ -28,6 +28,8 @@ const Header = () => {
     window.location.href = '/signin';
   };
 
+  console.log('isHost', typeof isHost);
+  console.log('isHost', isHost);
   return (
 
     <HeaderStyle>
@@ -38,12 +40,12 @@ const Header = () => {
       </Link>
       <Div>
         {
-          isHost && (
+          isHost ? (
             <ButtonLink to='/create/place'>
               {/* <HouseIcon color='white' size='24px' /> */}
               Create a place
             </ButtonLink>
-          )
+          ) : ''
         }
         <Nav>
           {
