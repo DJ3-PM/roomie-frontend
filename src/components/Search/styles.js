@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import searchIcon from '../../assets/static/search.svg';
 
-export const MainTitle = styled.h1`
-  position: absolute;
-  top: 115px;
-  text-align: center;
-`;
-
 export const SearchContainer = styled.div`
    width: 80%;
     border-radius: 100px;
@@ -19,7 +13,6 @@ export const SearchContainer = styled.div`
         box-shadow: 0 1px 6px 0 #20212447;
         border: 2px solid #c3d233;
     }
-    
 `;
 
 export const SearchItem = styled.input`
@@ -28,7 +21,6 @@ export const SearchItem = styled.input`
     border: none;
     outline: none;
     background: none;
-    
 `;
 
 export const Title = styled.h2`
