@@ -8,6 +8,7 @@ export const Footer = styled.footer`
   align-items: center;
   background: #f4f4f4;
   height: 50px;
+  padding: 0 15px;
 `;
 
 export const Link = styled(LinkRouter)`

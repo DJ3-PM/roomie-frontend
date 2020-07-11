@@ -11,4 +11,7 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   padding: 12px 24px;
+  &:hover {
+    font-weight: bold;
+  }
 `;

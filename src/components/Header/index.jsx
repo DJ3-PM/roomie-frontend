@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AiFillHome as HouseIcon } from 'react-icons/ai';
-import { HeaderStyle, Nav, Logo, ButtonLink, Avatar, Ul, Li, Div } from './styles';
+import { HeaderStyle, Nav, Logo, ButtonLink, Avatar, Ul, Li, Div, LinkLi } from './styles';
 import logoImg from '../../assets/static/logo.png';
 import avatarImg from '../../assets/static/avatar.jpg';
 import { Context } from '../../Context';
@@ -42,7 +41,6 @@ const Header = () => {
         {
           isHost ? (
             <ButtonLink to='/create/place'>
-              {/* <HouseIcon color='white' size='24px' /> */}
               Create a place
             </ButtonLink>
           ) : ''
@@ -54,8 +52,8 @@ const Header = () => {
               <Avatar src={avatarImg} alt='Avatar' />
           }
           <Ul>
-            <Li><Link to='/favorites'>Favorites</Link></Li>
-            <Li><Link to='#' onClick={handleLogOut}>Signout</Link></Li>
+            <Li><LinkLi to='/favorites'>Favorites</LinkLi></Li>
+            <Li><LinkLi to='#' onClick={handleLogOut}>Signout</LinkLi></Li>
           </Ul>
         </Nav>
 
