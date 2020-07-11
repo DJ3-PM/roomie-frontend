@@ -25,6 +25,10 @@ export const SearchItem = styled.input`
 
 export const Title = styled.h2`
     text-align: center;
+    
+    @media screen and (max-width: 375px) {
+        font-size: 1.4em;
+    }
 `;
 
 export const SearchIconItem = styled.span`
