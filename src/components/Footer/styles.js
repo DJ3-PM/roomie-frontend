@@ -9,6 +9,11 @@ export const Footer = styled.footer`
   background: #f4f4f4;
   height: 80px;
   padding: 0 15px;
+
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 export const Link = styled(LinkRouter)`
@@ -21,5 +26,9 @@ export const Link = styled(LinkRouter)`
   }
   &:hover {
     font-weight: bold;
+  }
+
+  @media screen and (max-width: 375px) {
+    margin-bottom: 16px;
   }
 `;
