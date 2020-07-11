@@ -42,7 +42,7 @@ const Home = () => {
   };
 
   return (
-    <Layout>
+    <Layout title='Home' description='Find your perfect Roomeate'>
       <Hero>
         <Search onChange={handleSearch} />
       </Hero>

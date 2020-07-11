@@ -42,7 +42,7 @@ const Signup = () => {
 
   console.log(form);
   return (
-    <Layout>
+    <Layout title='Sign up!' description='Sign up'>
       <Wrapper>
         <Form onSubmit={handleOnSubmit} title='Create an account'>
           <Input name='username' onChange={handleTextInput} type='email' placeholder='Email' required />

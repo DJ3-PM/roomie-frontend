@@ -62,7 +62,7 @@ const ViewRoom = ({ match }) => {
   };
 
   return (
-    <Layout>
+    <Layout title={place.name} description={place.description}>
       {renderHomeView()}
     </Layout>
   );

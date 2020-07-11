@@ -65,7 +65,7 @@ const Signin = () => {
   };
 
   return (
-    <Layout>
+    <Layout title='Sign in' description='Sign in'>
       <Wrapper>
         <Form onSubmit={handleOnSubmit} title='Welcome Back!'>
           <Description text='Please login to your account.' />
