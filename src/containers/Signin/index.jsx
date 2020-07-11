@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Context } from '../../Context';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLock } from 'react-icons/fi';
+import { Context } from '../../Context';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
 import Form from '../../components/Form';
@@ -64,14 +65,24 @@ const Signin = () => {
   };
 
   return (
-    <Layout>
+    <Layout title='Sign in' description='Sign in'>
       <Wrapper>
         <Form onSubmit={handleOnSubmit} title='Welcome Back!'>
-          <Description text='Please login to your account.'/>
-          <p><AiOutlineUser/>User</p>
+          <Description text='Please login to your account.' />
+          <p>
+            <AiOutlineUser />
+            User
+          </p>
           <Input name='username' onChange={handleTextInput} type='email' placeholder='Email' required />
-          <p><FiLock/>Password</p>
+          <p>
+            <FiLock />
+            Password
+          </p>
           <Input name='password' onChange={handleTextInput} type='password' placeholder='Password' required />
+          <p>
+            Not an user yet?
+            <Link to='/signup'> Sing up</Link>
+          </p>
           <FormButton text='Sign in!' />
         </Form>
       </Wrapper>
