@@ -47,7 +47,7 @@ const Home = () => {
         <Search onChange={handleSearch} />
       </Hero>
       <Wrapper>
-        <Categories title='Encuentra el lugar perfecto'>
+        <Categories title='Find your perfect place'>
           {
             loading ? <Loader /> : (
               <Place>
