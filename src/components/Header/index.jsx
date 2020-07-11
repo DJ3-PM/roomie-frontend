@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderStyle, Nav, Logo, ButtonLink, Avatar, Ul, Li, Div, LinkLi } from './styles';
+import { HeaderStyle, Nav, ButtonLink, Avatar, Ul, Li, Div, LinkLi } from './styles';
 import logoImg from '../../assets/static/logo.png';
-import avatarImg from '../../assets/static/avatar.jpg';
 import DefaultUser from '../DefaultUser';
+import Logo from '../Logo';
 import { Context } from '../../Context';
 
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
     <HeaderStyle>
       <Link to='/'>
         <figure>
-          <Logo src={logoImg} alt='Logo DJ3' />
+          <Logo />
         </figure>
       </Link>
       <Div>
@@ -52,8 +52,8 @@ const Header = () => {
               <>
                 <Avatar src={avatar} alt='Avatar' />
                 <Ul>
-                  <Li><Link to='/favorites'>Favorites</Link></Li>
-                  <Li><Link to='#' onClick={handleLogOut}>Signout</Link></Li>
+                  <Li><LinkLi to='/favorites'>Favorites</LinkLi></Li>
+                  <Li><LinkLi to='#' onClick={handleLogOut}>Signout</LinkLi></Li>
                 </Ul>
               </>
             ) : <DefaultUser />
