@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
+import { fadeIn } from '../../styles/Animations';
 
 export const ImageContainer = styled.div`
   height: 250px;
@@ -7,6 +8,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
+  ${fadeIn({ time: '2.5s' })}
   width: 100%;
   object-fit: cover;
   height: 100%;
