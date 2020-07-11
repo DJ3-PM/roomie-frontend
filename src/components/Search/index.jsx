@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { SearchContainer, SearchItem, MainTitle, Title, SearchIconItem } from './styles';
 
@@ -8,7 +9,7 @@ const Search = ({ onChange }) => {
         <SearchItem onChange={onChange} type='search' placeholder='Find your next roomie' />
         <SearchIconItem />
       </SearchContainer>
-      <Title>Los mejores lugares de Medellín <br/> para vivir momentos únicos</Title>
+      <Title>The best places in Medellín <br/> to live unique moments</Title>
     </>
   );
 };

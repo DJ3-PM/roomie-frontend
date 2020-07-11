@@ -51,7 +51,7 @@ const ViewRoom = ({ match }) => {
               <DescriptionRoom>
                 <Name>{name}</Name>
                 <Carousel images={images} />
-                <h3>Descripción</h3>
+                <h3>Place description</h3>
                 <DescriptionRoomText>{description}</DescriptionRoomText>
               </DescriptionRoom>
             </Wrapper>
