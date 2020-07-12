@@ -12,8 +12,6 @@ import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 import DefaultUser from '../../components/DefaultUser';
 
-import userDefault from '../../assets/static/userDefault.svg';
-
 import { Avatar } from './styles';
 
 const CreateProfile = () => {

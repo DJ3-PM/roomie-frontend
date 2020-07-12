@@ -62,6 +62,7 @@ const CreatePlace = () => {
       try {
         const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/places', myDataForm, {});
         alert(data.message);
+        window.location.href = '/';
       } catch (error) {
         const { message } = error.response.data;
         alert(message);
