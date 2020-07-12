@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import Carousel from '../../components/Carousel';
-import Host from '../../components/Host';
+import InfoSidebar from '../../components/InfoSidebar';
 import Loader from '../../components/Loader';
 import useFetchPlace from '../../hooks/useFetchPlace';
 import { Wrapper, Name, DescriptionRoom, DescriptionRoomText } from './styles';
@@ -19,7 +19,7 @@ const ViewRoom = ({ match }) => {
         {
           loading ? <Loader /> : (
             <Wrapper>
-              <Host {...place} />
+              <InfoSidebar {...place} />
               <DescriptionRoom>
                 <Name>{name}</Name>
                 <Carousel images={images} />
