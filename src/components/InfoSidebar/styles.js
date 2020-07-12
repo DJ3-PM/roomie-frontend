@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HostInfo = styled.section`
+export const Sidebar = styled.section`
      display: flex;
      flex-direction: column;
      justify-content: center;

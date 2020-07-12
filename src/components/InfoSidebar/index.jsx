@@ -5,17 +5,17 @@ import { FaBath, FaParking, FaWhatsapp } from 'react-icons/fa';
 import { MdScreenShare } from 'react-icons/md';
 import { AiOutlineMail as Email } from 'react-icons/ai';
 import { GiVacuumCleaner as Cleaning, GiClosedDoors as Closet } from 'react-icons/gi';
-import { HostInfo, HostAbout, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact } from './styles';
+import { Sidebar, HostAbout, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact } from './styles';
 
-const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: host }) => {
+const InfoSidebar = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: profile }) => {
   const customMessage = 'Hola%20estoy%20interesado%20en%20el%20departamento';
 
   return (
-    <HostInfo>
+    <Sidebar>
       <HostInfoDetails>
-        <HostInfoImg src={host.avatar} alt='Imagen del host' />
-        <h3>{`${host.firstname} ${host.lastname}`}</h3>
-        <HostAbout>{`${host.about}`}</HostAbout>
+        <HostInfoImg src={profile.avatar} alt='Imagen del profile' />
+        <h3>{`${profile.firstname} ${profile.lastname}`}</h3>
+        <HostAbout>{`${profile.about}`}</HostAbout>
         <p>{`${price} COP / Día`}</p>
       </HostInfoDetails>
       <HostServices>
@@ -96,22 +96,22 @@ const Host = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: hos
       </HostServices>
       <p>Contact:</p>
       <ContactWrapper>
-        <BtnContact href={`https://wa.me/${host.whatsapp}/?text=${customMessage}`}>
+        <BtnContact target='_blank' href={`https://wa.me/${profile.whatsapp}/?text=${customMessage}`}>
           <HostServicesImg>
             <FaWhatsapp size='25px' />
           </HostServicesImg>
         </BtnContact>
-        <BtnContact href={`mailto:${host.contactEmail}`}>
+        <BtnContact target='_blank' href={`mailto:${profile.contactEmail}`}>
           <HostServicesImg>
             <Email size='25px' />
           </HostServicesImg>
         </BtnContact>
       </ContactWrapper>
-    </HostInfo>
+    </Sidebar>
   );
 };
 
-Host.propTypes = {
+InfoSidebar.propTypes = {
   price: PropTypes.number,
   wifi: PropTypes.bool,
   bath: PropTypes.bool,
@@ -122,4 +122,4 @@ Host.propTypes = {
   profileId: PropTypes.object.isRequired,
 };
 
-export default Host;
+export default InfoSidebar;
