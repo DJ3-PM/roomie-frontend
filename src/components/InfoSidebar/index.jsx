@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BsWifi } from 'react-icons/bs';
@@ -5,21 +6,16 @@ import { FaBath, FaParking, FaWhatsapp } from 'react-icons/fa';
 import { MdScreenShare } from 'react-icons/md';
 import { AiOutlineMail as Email } from 'react-icons/ai';
 import { GiVacuumCleaner as Cleaning, GiClosedDoors as Closet } from 'react-icons/gi';
-import { Sidebar, HostAbout, HostInfoDetails, HostInfoImg, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact } from './styles';
+import ProfileInfo from '../ProfileInfo';
+import { Sidebar, HostServices, HostServicesDetails, HostServicesImg, HostServicesName, ContactWrapper, BtnContact } from './styles';
 
 const InfoSidebar = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: profile }) => {
   const customMessage = 'Hola%20estoy%20interesado%20en%20el%20departamento';
 
   return (
     <Sidebar>
-      <HostInfoDetails>
-        <HostInfoImg src={profile.avatar} alt='Imagen del profile' />
-        <h3>{`${profile.firstname} ${profile.lastname}`}</h3>
-        <HostAbout>{`${profile.about}`}</HostAbout>
-        <p>{`${price} COP / Día`}</p>
-      </HostInfoDetails>
+      <ProfileInfo {...profile} price={price} />
       <HostServices>
-
         {
           wifi ? (
             <>

@@ -14,25 +14,6 @@ export const Sidebar = styled.section`
      }
  `;
 
-export const HostInfoDetails = styled.div`
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     margin: 15px;
-     width: 250px;
- `;
-
-export const HostInfoImg = styled.img`
-     width: 150px;
-     height: 150px;
-     border-radius: 50%;
-     margin-bottom: 15px;
- `;
-
-export const HostAbout = styled.p`
-    text-align: center;
-`;
-
 export const HostServices = styled.div`
      display: flex;
      flex-direction: column;
