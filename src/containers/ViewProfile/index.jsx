@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Layout from '../../components/Layout';
-import Wrapper from '../../components/Wrapper';
 import Loader from '../../components/Loader';
 import InfoSidebar from '../../components/InfoSidebar';
 import ProfileInfo from '../../components/ProfileInfo';
@@ -19,8 +18,7 @@ const useFetchProfile = ({ profileId }) => {
     const fetchProfileData = async () => {
       try {
         setLoading(true);
-        // const { data } = await axios.get(`https://peaceful-bastion-02967.herokuapp.com/api/profile/${profileId}`);
-        const { data } = await axios.get(`http://localhost:8000/api/profile/${profileId}`);
+        const { data } = await axios.get(`https://peaceful-bastion-02967.herokuapp.com/api/profile/${profileId}`);
         setProfile(data.data);
         setLoading(false);
       } catch (error) {
