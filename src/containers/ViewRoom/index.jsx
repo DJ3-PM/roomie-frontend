@@ -5,13 +5,15 @@ import Carousel from '../../components/Carousel';
 import InfoSidebar from '../../components/InfoSidebar';
 import Loader from '../../components/Loader';
 import useFetchPlace from '../../hooks/useFetchPlace';
+import ProfileInfo from '../../components/ProfileInfo';
+import PlaceInfo from '../../components/PlaceInfo';
 import { Wrapper, Name, DescriptionRoom, DescriptionRoomText } from './styles';
 
 const ViewRoom = ({ match }) => {
 
   const { placeId } = match.params;
   const { place, images, loading } = useFetchPlace({ placeId });
-  const { name, description } = place;
+  const { name, description, profileId: profile } = place;
 
   const renderHomeView = () => {
     return (
@@ -19,7 +21,10 @@ const ViewRoom = ({ match }) => {
         {
           loading ? <Loader /> : (
             <Wrapper>
-              <InfoSidebar {...place} />
+              <InfoSidebar>
+                <ProfileInfo {...profile} />
+                <PlaceInfo {...place} />
+              </InfoSidebar>
               <DescriptionRoom>
                 <Name>{name}</Name>
                 <Carousel images={images} />
