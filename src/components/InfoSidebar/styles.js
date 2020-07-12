@@ -14,29 +14,6 @@ export const Sidebar = styled.section`
      }
  `;
 
-export const HostServices = styled.div`
-     display: flex;
-     flex-direction: column;
-     justify-content: space-around;
-     align-items: center;
-     background: #ededed;
-     padding: 15px;
- `;
-
-export const HostServicesDetails = styled.div`
-     display: flex;
-     margin: 0 15px;
-     width: 100%;
- `;
-
-export const HostServicesImg = styled.div`
-     align-self: center;
- `;
-
-export const HostServicesName = styled.p`
-     margin-left: 40px;
- `;
-
 export const ContactWrapper = styled.div`
     display: flex;
     justify-content: space-between;
