@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { RiHomeGearLine as Home } from 'react-icons/ri';
 import { Link as RouterLink } from 'react-router-dom';
 
 export const HeaderStyle = styled.header`
@@ -20,6 +21,12 @@ export const Nav = styled.nav`
   align-items: center;
   &:hover ul {
     display: block;
+  }
+`;
+
+export const Figure = styled.figure`
+  @media screen and (max-width: 375px) {
+    margin:0;
   }
 `;
 
@@ -47,8 +54,21 @@ export const ButtonLink = styled(RouterLink)`
     border-color: #778319;
   }
   @media screen and (max-width: 375px) {
-    padding: 0;
+    padding: 6px;
     text-align: center;
+
+    & span {
+      display: none;
+    }
+  }
+`;
+
+export const HomeIcon = styled(Home)`
+  display:none;
+  font-size: 28px;
+
+  @media screen and (max-width: 375px) {
+    display: block;
   }
 `;
 

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderStyle, Nav, ButtonLink, Avatar, Ul, Li, Div, LinkLi } from './styles';
-import logoImg from '../../assets/static/logo.png';
+import { HeaderStyle, Nav, ButtonLink, Avatar, Ul, Li, Div, LinkLi, Figure, HomeIcon } from './styles';
 import DefaultUser from '../DefaultUser';
 import Logo from '../Logo';
 import { Context } from '../../Context';
@@ -34,15 +33,16 @@ const Header = () => {
 
     <HeaderStyle>
       <Link to='/'>
-        <figure>
+        <Figure>
           <Logo />
-        </figure>
+        </Figure>
       </Link>
       <Div>
         {
           isHost ? (
             <ButtonLink to='/create/place'>
-              Create a place
+              <span>Create a place</span>
+              <HomeIcon />
             </ButtonLink>
           ) : ''
         }
