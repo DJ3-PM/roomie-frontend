@@ -7,6 +7,11 @@ This is an application that allows you to:
 * Contact the owner of the room you liked best so you can rent it.
 * In case you want to rent, you can add photos and description of your room so they can contact you.
 
+## Screens
+
+
+## Documentation
+
 [Project's Documentation](https://www.notion.so/rommeate/ROOMEATE-667938234447475eb34e458204eed61e)
 
 ## Installation
@@ -19,7 +24,7 @@ npm install
 
 ### Development
 
-If you want run, run the next line:
+If you want run, execute the next line:
 
 ```
 npm run dev
@@ -44,4 +49,4 @@ npm test:coverage
 
 ## Deploy
 
-https://roomeate.vercel.app/
+https://roomeate.vercel.app
