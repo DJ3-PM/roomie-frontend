@@ -3,29 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProfileInfo from '../ProfileInfo';
 import PlaceInfo from '../PlaceInfo';
-import { Sidebar, ContactWrapper, BtnContact } from './styles';
+import { Sidebar } from './styles';
 
 const InfoSidebar = ({ price, wifi, bath, cleaning, closet, tv, parking, profileId: profile }) => {
-  const customMessage = 'Hola%20estoy%20interesado%20en%20el%20departamento';
-
   return (
     <Sidebar>
       <ProfileInfo {...profile} price={price} />
-      <PlaceInfo wifi={wifi} bath={bath} cleaning={cleaning} closet={closet} tv={tv} parking={parking} />
-
-      <p>Contact:</p>
-      {/* <ContactWrapper>
-        <BtnContact target='_blank' href={`https://wa.me/${profile.whatsapp}/?text=${customMessage}`}>
-          <HostServicesImg>
-            <FaWhatsapp size='25px' />
-          </HostServicesImg>
-        </BtnContact>
-        <BtnContact target='_blank' href={`mailto:${profile.contactEmail}`}>
-          <HostServicesImg>
-            <Email size='25px' />
-          </HostServicesImg>
-        </BtnContact>
-      </ContactWrapper> */}
+      <PlaceInfo price={price} wifi={wifi} bath={bath} cleaning={cleaning} closet={closet} tv={tv} parking={parking} />
     </Sidebar>
   );
 };

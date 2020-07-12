@@ -18,3 +18,22 @@ export const Img = styled.img`
 export const About = styled.p`
     text-align: center;
 `;
+
+export const ContactWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const ContactButton = styled.a`
+     outline: none;
+     padding: 10px 20px;
+     border: none;
+     text-decoration: none;
+     color: black;
+     cursor: pointer;
+
+     &:hover {
+         font-weight: bold;
+     }
+ `;
+

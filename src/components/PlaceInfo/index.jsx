@@ -2,7 +2,6 @@ import React from 'react';
 import { BsWifi } from 'react-icons/bs';
 import { FaBath, FaParking, FaWhatsapp } from 'react-icons/fa';
 import { MdScreenShare } from 'react-icons/md';
-import { AiOutlineMail as Email } from 'react-icons/ai';
 import { GiVacuumCleaner as Cleaning, GiClosedDoors as Closet } from 'react-icons/gi';
 
 import { Info, Service, Img, Name } from './styles';
@@ -10,6 +9,7 @@ import { Info, Service, Img, Name } from './styles';
 const PlaceInfo = ({ price, wifi, bath, cleaning, closet, tv, parking }) => {
   return (
     <Info>
+      <p>{`${price} COP / Día`}</p>
       {
         wifi ? (
           <>
