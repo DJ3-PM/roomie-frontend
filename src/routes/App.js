@@ -10,6 +10,7 @@ import CreateProfile from '../containers/CreateProfile';
 import ViewRoom from '../containers/ViewRoom';
 import NotFound from '../containers/NotFound';
 import Favorites from '../containers/Favorites';
+import ViewProfile from '../containers/ViewProfile';
 
 const App = () => {
   const { userId } = useContext(Context);
@@ -28,6 +29,7 @@ const App = () => {
         <Route exact path='/create/profile' component={isLogged ? Home : CreateProfile} />
         <Route exact path='/places/:placeId' component={isLogged ? ViewRoom : Signin} />
         <Route exact path='/favorites' component={isLogged ? Favorites : Signin} />
+        <Route exact path='/profile/:profileId' component={ViewProfile} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

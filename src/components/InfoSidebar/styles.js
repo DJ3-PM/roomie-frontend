@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const Sidebar = styled.section`
      display: flex;
      flex-direction: column;
-     justify-content: center;
      align-items: center;
      background: #ededed;
      margin: 30px;
