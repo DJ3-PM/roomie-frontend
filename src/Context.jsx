@@ -4,7 +4,7 @@ export const Context = createContext();
 
 const Provider = ({ children }) => {
   const [isHost, setIsHost] = useState(() => {
-    return window.sessionStorage.getItem('isHost');
+    return window.sessionStorage.getItem('isHost') === 'true';
   });
 
   const [avatar, setAvatar] = useState(() => {

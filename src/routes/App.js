@@ -12,8 +12,10 @@ import NotFound from '../containers/NotFound';
 import Favorites from '../containers/Favorites';
 
 const App = () => {
-  const { userId, isHost } = useContext(Context);
+  const { userId } = useContext(Context);
+  const { isHost } = useContext(Context);
   const isLogged = userId && (isHost !== null);
+  const isLoggedHost = isLogged && isHost;
 
   return (
     <BrowserRouter>
@@ -22,8 +24,8 @@ const App = () => {
         <Route exact path='/' component={isLogged ? Home : Signin} />
         <Route exact path='/signin' component={isLogged ? Home : Signin} />
         <Route exact path='/signup' component={isLogged ? Home : Signup} />
-        <Route exact path='/create/place' component={isLogged && isHost ? CreatePlace : Home} />
-        <Route exact path='/create/profile' component={isLogged && (isHost !== null) ? Home : CreateProfile} />
+        <Route exact path='/create/place' component={isLoggedHost ? CreatePlace : Home} />
+        <Route exact path='/create/profile' component={isLogged ? Home : CreateProfile} />
         <Route exact path='/places/:placeId' component={isLogged ? ViewRoom : Signin} />
         <Route exact path='/favorites' component={isLogged ? Favorites : Signin} />
         <Route component={NotFound} />
