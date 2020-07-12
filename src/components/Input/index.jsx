@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Input, Label } from './style';
 
@@ -14,6 +15,15 @@ const InputComponent = ({ onChange, name = '', type = 'text', text = '', placeho
       <Input onChange={onChange} type={type} name={name} placeholder={placeholder || capitalize(name)} required={required} />
     </>
   );
+};
+
+InputComponent.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  text: PropTypes.string,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
 };
 
 export default InputComponent;
