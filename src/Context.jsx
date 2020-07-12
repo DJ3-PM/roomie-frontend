@@ -3,7 +3,15 @@ import React, { createContext, useState } from 'react';
 export const Context = createContext();
 
 const Provider = ({ children }) => {
+  // const [isHost, setIsHost] = useState(() => {
+  //   return window.sessionStorage.getItem('isHost') === 'true';
+  // });
+
   const [isHost, setIsHost] = useState(() => {
+    console.log('SESSION STORAGE', window.sessionStorage.getItem('isHost'));
+    if (window.sessionStorage.getItem('isHost') === null) {
+      return null;
+    }
     return window.sessionStorage.getItem('isHost') === 'true';
   });
 
