@@ -11,16 +11,9 @@ import InputSelect from '../../components/InputSelect';
 import InputFile from '../../components/InputFile';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
+import transformFilesToURLs from '../../utils/transformFilesToURLs';
 
 import { SectionTitle, CheckboxArranger } from './styles';
-
-const transformFilesToURLs = ({ files }) => {
-  const auxArray = [];
-  Object.keys(files).forEach((entry) => {
-    auxArray.push(URL.createObjectURL(files[entry]));
-  });
-  return auxArray;
-};
 
 const CreatePlace = () => {
   const { profileId } = useContext(Context);
