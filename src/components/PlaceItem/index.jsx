@@ -35,9 +35,7 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, 
             <ImageContainer>
               <Image src={mainImage} alt='Roomie' />
               {
-                isFavorite ?
-                  <Button id={_id} onClick={handleOnClick}><Trash id={_id} color='#e91e63' size='24px' /></Button> :
-                  <Button id={_id} onClick={handleOnClick}><Heart id={_id} color='#BACD25' size='24px' /></Button>
+                !isFavorite && <Button id={_id} onClick={handleOnClick}><Heart id={_id} color='#BACD25' size='24px' /></Button>
               }
               <Modal isOpen={modalIsOpen} closeModal={closeModal}>
                 Added to favorites!
