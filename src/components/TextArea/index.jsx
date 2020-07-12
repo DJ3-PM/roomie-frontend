@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Label, Textarea } from './styles';
 
@@ -9,6 +10,12 @@ const TextArea = ({ name, onChange, text }) => {
       <Textarea name={name} onChange={onChange} id='' cols='30' rows='10' />
     </>
   );
+};
+
+TextArea.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default TextArea;

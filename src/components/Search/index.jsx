@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import { SearchContainer, SearchItem, MainTitle, Title, SearchIconItem } from './styles';
+import PropTypes from 'prop-types'
+import { SearchContainer, SearchItem, Title, SearchIconItem } from './styles';
 
 const Search = ({ onChange }) => {
   return (
@@ -13,4 +14,8 @@ const Search = ({ onChange }) => {
     </>
   );
 };
+
+Search.propTypes = {
+  onChange: PropTypes.func.isRequired,
+}
 export default Search;
