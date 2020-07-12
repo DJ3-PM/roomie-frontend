@@ -4,11 +4,11 @@ import { RiHeartAddLine as Heart } from 'react-icons/ri';
 import { FaRegTrashAlt as Trash } from 'react-icons/fa';
 import { Context } from '../../Context';
 import useNearScreen from '../../hooks/useNearScreen';
-import Modal from '../../components/Modal';
+import Modal from '../Modal';
 
 import { Item, Details, Button, Title, Image, ImageContainer, Price, Location, Link } from './styles';
 
-const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false }) => {
+const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, modalIsOpen, openModal, closeModal }) => {
   const { profileId } = useContext(Context);
   const [show, element] = useNearScreen();
 
@@ -20,7 +20,7 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false }
         profileId,
         placeId: target.id,
       });
-      alert(data.message);
+      openModal();
     } catch (error) {
       console.log(error);
     }
@@ -39,8 +39,8 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false }
                   <Button id={_id} onClick={handleOnClick}><Trash id={_id} color='#e91e63' size='24px' /></Button> :
                   <Button id={_id} onClick={handleOnClick}><Heart id={_id} color='#BACD25' size='24px' /></Button>
               }
-              <Modal isOpen={true}>
-                Agregado a Favoritos!!!😀
+              <Modal isOpen={modalIsOpen} closeModal={closeModal}>
+                Added to favorites!
               </Modal>
             </ImageContainer>
             <Details>

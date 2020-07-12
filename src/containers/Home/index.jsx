@@ -15,6 +15,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [places, setPlaces] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchPlaces = async () => {
@@ -41,6 +42,14 @@ const Home = () => {
     setFilteredPlaces(filteredPlaces);
   };
 
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <Layout title='Home' description='Find your perfect Roomeate'>
       <Hero>
@@ -53,7 +62,7 @@ const Home = () => {
               <Place>
                 {
                 // eslint-disable-next-line react/jsx-props-no-spreading
-                  filteredPlaces.map((place) => <PlaceItem key={place._id} {...place} />)
+                  filteredPlaces.map((place) => <PlaceItem key={place._id} {...place} modalIsOpen={modalIsOpen} openModal={openModal} closeModal={closeModal} />)
                 }
               </Place>
             )
