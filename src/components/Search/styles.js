@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import searchIcon from '../../assets/static/search.svg';
 
 export const SearchContainer = styled.div`
    width: 80%;
@@ -32,11 +31,11 @@ export const Title = styled.h2`
 `;
 
 export const SearchIconItem = styled.span`
-background-image: url(${searchIcon});
-background-repeat: no-repeat;
-background-position: center;
-align-self: center;
-background-size: contain;
-width: 18px;
-height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    color: black;
 `;

@@ -81,7 +81,7 @@ const Signin = () => {
           <Input name='password' onChange={handleTextInput} type='password' placeholder='Password' required />
           <p>
             Not an user yet?
-            <Link to='/signup'> Sing up</Link>
+            <Link to='/signup'> Sign up</Link>
           </p>
           <FormButton text='Sign in!' />
         </Form>

@@ -10,13 +10,14 @@ import InputFile from '../../components/InputFile';
 import InputCheck from '../../components/InputCheck';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
-import DefaultUser from '../../components/DefaultUser';
+
+import defaultUser from '../../components/DefaultUser';
 
 import { Avatar } from './styles';
 
 const CreateProfile = () => {
   const { userId } = useContext(Context);
-  const [profileImage, setProfileImage] = useState(null);
+  const [profileImage, setProfileImage] = useState(defaultUser);
 
   const [form, setForm] = useState({
     isHost: false,
@@ -87,9 +88,7 @@ const CreateProfile = () => {
     <Layout>
       <Wrapper>
         <Form title='Create your profile' onSubmit={handleOnSubmit}>
-          {
-            profileImage ? <Avatar src={profileImage} /> : <DefaultUser />
-          }
+          <Avatar src={profileImage} />
           <InputFile onChange={handleFileInput} name='avatar' text='Upload your avatar' />
           <Input name='firstname' onChange={handleTextInput} text={'What\'s your name?'} />
           <Input name='lastname' onChange={handleTextInput} text={'What\'s your lastname?'} />

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Svg } from './styles';
 
-function SvgComponent(props) {
+function DefaultUser(props) {
   return (
     <Svg viewBox='0 0 480 480' {...props}>
       <path
@@ -22,4 +22,4 @@ function SvgComponent(props) {
   );
 }
 
-export default SvgComponent;
+export default DefaultUser;
