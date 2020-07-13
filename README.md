@@ -2,10 +2,10 @@
 
 This is an application that allows you to:
 
-* Search the available rooms that exist in Medellin.
-* Add the rooms you liked best to a list of favorites.
-* Contact the owner of the room you liked best so you can rent it.
-* In case you want to rent, you can add photos and description of your room so they can contact you.
+* Search for available rooms that exist in Medellin.
+* Save your favorite rooms to a list.
+* Contact the owner of a room through WhatsApp or mail.
+* You can be a host yourself, as such, you can add photos and information of your room so people can find it.
 
 ## Screens
 
@@ -43,7 +43,7 @@ You can execute the following command:
 ```
 npm run build
 ```
-The project opens in [](http://localhost:8080/)
+The project listens on [](http://localhost:8080/)
 
 ## Testing
 
@@ -53,7 +53,7 @@ npm test:watch
 npm test:coverage
 ```
 
-## Deploy
+## Live Demo
 
 https://roomeate.vercel.app
 
