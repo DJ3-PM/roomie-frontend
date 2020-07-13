@@ -8,15 +8,15 @@ import Modal from '../Modal';
 
 import { Item, Details, Button, Title, Image, ImageContainer, Price, Location, Link } from './styles';
 
-const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, modalIsOpen, openModal, closeModal }) => {
-  const { profileId } = useContext(Context);
+const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, modalIsOpen, openModal, closeModal, history, setFavorites }) => {
+  const { profileId, userId } = useContext(Context);
   const [show, element] = useNearScreen();
 
-  const handleOnClick = async (event) => {
+  const addFavorite = async (event) => {
     const { target } = event;
     console.log(target.id);
     try {
-      const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
+      await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
         profileId,
         placeId: target.id,
       });
@@ -25,6 +25,29 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, 
       console.log(error);
     }
 
+  };
+  const deleteFavorite = async (event) => {
+    const { target } = event;
+    try {
+      await axios.delete('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
+        data: {
+          profileId: userId,
+          placeId: target.id,
+        },
+      });
+
+      const { data } = await axios.get('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
+        headers: {
+          'profileid': profileId,
+        },
+      });
+
+      const favoritesArray = data.data;
+      setFavorites(favoritesArray);
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -35,7 +58,9 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, 
             <ImageContainer>
               <Image src={mainImage} alt='Roomie' />
               {
-                !isFavorite && <Button id={_id} onClick={handleOnClick}><Heart id={_id} color='#BACD25' size='24px' /></Button>
+                isFavorite ?
+                  <Button id={_id} onClick={deleteFavorite}><Trash id={_id} color='#e91e63' size='24px' /></Button> :
+                  <Button id={_id} onClick={addFavorite}><Heart id={_id} color='#BACD25' size='24px' /></Button>
               }
               <Modal isOpen={modalIsOpen} closeModal={closeModal}>
                 Added to favorites!
