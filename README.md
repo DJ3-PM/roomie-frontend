@@ -62,7 +62,6 @@ Licensed under the [MIT License](https://github.com/DJ3-PM/roomie-frontend/blob/
 
 ## Authors
 
-
 - [Danelia Sanchez](https://github.com/DaneliaSanchz)
 - [Jose Cuevas](https://github.com/JoseCrz)
 - [Jesus Montero](https://github.com/jesusmonteroads)
