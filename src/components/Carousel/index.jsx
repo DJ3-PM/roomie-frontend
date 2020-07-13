@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { AiFillCaretLeft as Left, AiFillCaretRight as Right } from 'react-icons/ai';
 import CarouselItem from '../CarouselItem';
 import ImagesList from '../ImagesList';
