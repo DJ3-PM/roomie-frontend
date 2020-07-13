@@ -55,3 +55,14 @@ npm test:coverage
 ## Deploy
 
 https://roomeate.vercel.app
+
+## License
+Licensed under the MIT License.
+
+## Authors
+
+- [Danelia Sanchez](https://github.com/DaneliaSanchz)
+- [Jose Cuevas](https://github.com/JoseCrz)
+- [Jesus Montero](https://github.com/jesusmonteroads)
+- [Carlos Ruiz](https://github.com/CharlyRuizM)
+- [Juan Jose Vega](https://github.com/juanjosevega99)
