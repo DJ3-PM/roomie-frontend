@@ -8,7 +8,11 @@ export const Form = styled.form`
   background: linear-gradient(137deg, rgba(238,255,94,1) 0%, rgba(133,156,0,1) 100%);
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   height: max-content;
-
+  max-width: 65%;
+  
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 export const FormConstrainer = styled.div`
