@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Section } from './styles';
 
@@ -18,10 +17,6 @@ const Gallery = ({ imagesList }) => {
 
     </Section>
   );
-};
-
-Gallery.propTypes = {
-  imagesList: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Gallery;

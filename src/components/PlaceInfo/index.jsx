@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { BsWifi } from 'react-icons/bs';
 import { FaBath, FaParking } from 'react-icons/fa';
 import { MdScreenShare } from 'react-icons/md';
@@ -87,16 +86,6 @@ const PlaceInfo = ({ price, wifi, bath, cleaning, closet, tv, parking }) => {
     </Info>
 
   );
-};
-
-PlaceInfo.propTypes = {
-  price: PropTypes.number,
-  wifi: PropTypes.bool,
-  bath: PropTypes.bool,
-  cleaning: PropTypes.bool,
-  closet: PropTypes.bool,
-  tv: PropTypes.bool,
-  parking: PropTypes.bool,
 };
 
 export default PlaceInfo;

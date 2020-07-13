@@ -10,8 +10,4 @@ const CarouselItem = ({ image }) => {
   );
 };
 
-CarouselItem.propTypes = {
-  image: PropTypes.string.isRequired,
-};
-
 export default CarouselItem;
