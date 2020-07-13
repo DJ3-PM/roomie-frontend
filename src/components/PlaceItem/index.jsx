@@ -12,13 +12,11 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, 
   const { profileId, userId } = useContext(Context);
   const [show, element] = useNearScreen();
 
-  const addFavorite = async (event) => {
-    const { target } = event;
-    console.log(target.id);
+  const addFavorite = async () => {
     try {
       await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
         profileId,
-        placeId: target.id,
+        placeId: _id,
       });
       openModal();
     } catch (error) {
@@ -26,13 +24,12 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, 
     }
 
   };
-  const deleteFavorite = async (event) => {
-    const { target } = event;
+  const deleteFavorite = async () => {
     try {
       await axios.delete('https://peaceful-bastion-02967.herokuapp.com/api/favorites', {
         data: {
           profileId: userId,
-          placeId: target.id,
+          placeId: _id,
         },
       });
 
@@ -59,8 +56,8 @@ const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, 
               <Image src={mainImage} alt='Roomie' />
               {
                 isFavorite ?
-                  <Button id={_id} onClick={deleteFavorite}><Trash id={_id} color='#e91e63' size='24px' /></Button> :
-                  <Button id={_id} onClick={addFavorite}><Heart id={_id} color='#BACD25' size='24px' /></Button>
+                  <Button onClick={deleteFavorite}><Trash color='#e91e63' size='24px' /></Button> :
+                  <Button onClick={addFavorite}><Heart color='#BACD25' size='24px' /></Button>
               }
               <Modal isOpen={modalIsOpen} closeModal={closeModal}>
                 Added to favorites!
