@@ -10,6 +10,7 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import FormButton from '../../components/FormButton';
 import Description from '../../components/Description';
+import TitleInput from '../../components/TitleInput';
 
 const Signin = () => {
   const [form, setForm] = useState({});
@@ -69,19 +70,17 @@ const Signin = () => {
       <Wrapper>
         <Form onSubmit={handleOnSubmit} title='Welcome Back!'>
           <Description text='Please login to your account.' />
-          <p>
+          <TitleInput text='User'>
             <AiOutlineUser />
-            User
-          </p>
+          </TitleInput>
           <Input name='username' onChange={handleTextInput} type='email' placeholder='Email' required />
-          <p>
+          <TitleInput text='Password'>
             <FiLock />
-            Password
-          </p>
+          </TitleInput>
           <Input name='password' onChange={handleTextInput} type='password' placeholder='Password' required />
           <p>
-            Not an user yet?
-            <Link to='/signup'> Sing up</Link>
+            First time here?
+            <Link to='/signup'> Sing up for an account</Link>
           </p>
           <FormButton text='Sign in!' />
         </Form>
