@@ -9,6 +9,11 @@ This is an application that allows you to:
 
 ## Screens
 
+### Sign In Screen
+![Sign In Screen](https://github.com/DJ3-PM/roomie-frontend/blob/master/src/assets/static/Screen-Roomeate-SignIn.png)
+
+### Home Screen
+![Home Screen](https://github.com/DJ3-PM/roomie-frontend/blob/master/src/assets/static/Screen-Roomeate-Home.jpg)
 
 ## Documentation
 
@@ -38,6 +43,7 @@ You can execute the following command:
 ```
 npm run build
 ```
+The project opens in [](http://localhost:8080/)
 
 ## Testing
 
@@ -50,3 +56,14 @@ npm test:coverage
 ## Deploy
 
 https://roomeate.vercel.app
+
+## License
+Licensed under the [MIT License](https://github.com/DJ3-PM/roomie-frontend/blob/master/LICENSE).
+
+## Authors
+
+- [Danelia Sanchez](https://github.com/DaneliaSanchz)
+- [Jose Cuevas](https://github.com/JoseCrz)
+- [Jesus Montero](https://github.com/jesusmonteroads)
+- [Carlos Ruiz](https://github.com/CharlyRuizM)
+- [Juan Jose Vega](https://github.com/juanjosevega99)
