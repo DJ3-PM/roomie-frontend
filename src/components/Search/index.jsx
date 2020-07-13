@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { BsSearch } from 'react-icons/bs';
 import { SearchContainer, SearchItem, Title, SearchIconItem } from './styles';
 
 const Search = ({ onChange }) => {
@@ -8,7 +9,9 @@ const Search = ({ onChange }) => {
     <>
       <SearchContainer>
         <SearchItem onChange={onChange} type='search' placeholder='Find your next roomie' />
-        <SearchIconItem />
+        <SearchIconItem>
+          <BsSearch />
+        </SearchIconItem>
       </SearchContainer>
       <Title>The best places in Medellín <br/> to live unique moments</Title>
     </>
