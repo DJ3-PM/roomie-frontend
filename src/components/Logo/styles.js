@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Svg = styled.svg`
   height: 50px;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 520px) {
     height: auto;
     max-width: 100px;
   }
