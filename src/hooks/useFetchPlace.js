@@ -16,7 +16,6 @@ const useFetchPlace = ({ placeId }) => {
         setPlace(place);
         setImages(images);
         setLoading(false);
-        console.log(place);
       } catch (error) {
         console.log(error);
         setLoading(false);

@@ -9,7 +9,6 @@ const Provider = ({ children }) => {
   // });
 
   const [isHost, setIsHost] = useState(() => {
-    console.log('SESSION STORAGE', window.sessionStorage.getItem('isHost'));
     if (window.sessionStorage.getItem('isHost') === null) {
       return null;
     }

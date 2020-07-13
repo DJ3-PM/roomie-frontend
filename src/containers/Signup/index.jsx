@@ -27,7 +27,6 @@ const Signup = () => {
       });
 
       const userId = data.data;
-      console.log(data);
       window.location.href = '/create/profile';
       activateUserId(userId);
     } catch (error) {
@@ -44,7 +43,6 @@ const Signup = () => {
     });
   };
 
-  console.log(form);
   return (
     <Layout title='Sign up!' description='Sign up'>
       <Wrapper>
