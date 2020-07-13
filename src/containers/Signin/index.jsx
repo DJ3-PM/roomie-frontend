@@ -21,6 +21,7 @@ const Signin = () => {
     activateProfileId,
     activateFirstname,
     activateLastname,
+    errorMessage,
   } = useContext(Context);
 
   const handleOnSubmit = async (event) => {
@@ -50,7 +51,11 @@ const Signin = () => {
       alert('Sign in succesfully!');
 
     } catch (error) {
-      console.log(error);
+      if (error.message === 'Request failed with status code 401') {
+        errorMessage('Invalid credentials');
+      } else {
+        errorMessage();
+      };
     }
 
   };
