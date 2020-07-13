@@ -45,7 +45,6 @@ export const ButtonLink = styled(RouterLink)`
   padding: 12px 24px;
   border-radius: 5px;
   border: none;
-  border-bottom: 3px solid #95a41f;
   cursor: pointer;
   transition: cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
   
