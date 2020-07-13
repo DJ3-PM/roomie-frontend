@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from './styles';
-import PropTypes from 'prop-types';
 import { AiOutlineMail as Email } from 'react-icons/ai';
 import { FaWhatsapp } from 'react-icons/fa';
 
@@ -27,16 +26,6 @@ const ProfileInfo = ({ _id, avatar, firstname, lastname, about, whatsapp, contac
       </ContactWrapper>
     </Info>
   );
-};
-
-ProfileInfo.propTypes = {
-  _id: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  firstname: PropTypes.string.isRequired,
-  lastname: PropTypes.string.isRequired,
-  about: PropTypes.string.isRequired,
-  whatsapp: PropTypes.string.isRequired,
-  contactEmail: PropTypes.string.isRequired,
 };
 
 export default ProfileInfo;
