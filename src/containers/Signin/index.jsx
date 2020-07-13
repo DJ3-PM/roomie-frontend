@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './styles';
 import axios from 'axios';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLock } from 'react-icons/fi';
