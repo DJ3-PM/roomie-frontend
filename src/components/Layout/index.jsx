@@ -15,6 +15,7 @@ const Layout = ({ title = '', description, children }) => {
         <meta name='description' content={description} />
         <link rel='icon' href={favicon} type='image/x-icon' sizes='32x32' />
         <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap' rel='stylesheet' />
+        <link rel='stylesheet' href='https://raw.githubusercontent.com/JoseCrz/toastify/master/toastify.css' />
       </Helmet>
       <Header />
 

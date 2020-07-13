@@ -46,7 +46,7 @@ const Favorites = () => {
               <Place>
                 {
                 // eslint-disable-next-line react/jsx-props-no-spreading
-                  favorites.map((favorite) => <PlaceItem key={favorite._id} {...favorite} isFavorite />)
+                  favorites.map((favorite) => <PlaceItem key={favorite._id} {...favorite} isFavorite setFavorites={setFavorites} />)
                 }
               </Place>
             )

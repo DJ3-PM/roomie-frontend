@@ -7,6 +7,7 @@ export const Info = styled.div`
      align-items: center;
      margin: 15px;
      width: 250px;
+     
  `;
 
 export const Img = styled.img`
