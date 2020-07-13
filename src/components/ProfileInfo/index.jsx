@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from './styles';
 import { AiOutlineMail as Email } from 'react-icons/ai';
 import { FaWhatsapp } from 'react-icons/fa';
-
-import { Info, Img, About, ContactWrapper, ContactButton } from './styles';
+import { Link, Info, Img, About, ContactWrapper, ContactButton } from './styles';
 
 const ProfileInfo = ({ _id, avatar, firstname, lastname, about, whatsapp, contactEmail }) => {
-  const customMessage = 'Hola%20estoy%20interesado%20en%20el%20departamento';
+  const customMessage = `Hello ${firstname}, I want to be your roomie! :)`;
 
   return (
     <Info>
