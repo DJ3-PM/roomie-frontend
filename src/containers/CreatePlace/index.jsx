@@ -31,7 +31,6 @@ const CreatePlace = ({ history }) => {
       try {
         const { data } = await axios.get('https://peaceful-bastion-02967.herokuapp.com/api/locations');
         const zonesArray = data.data;
-        console.log(zonesArray);
         setZones(zonesArray);
       } catch (error) {
         alert(error);
@@ -43,7 +42,6 @@ const CreatePlace = ({ history }) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log('submiting...');
     const myDataForm = new FormData();
 
     Object.keys(form).forEach((entry) => {
@@ -125,14 +123,11 @@ const CreatePlace = ({ history }) => {
       location: target.value,
     });
 
-    console.log(target.value);
-
     const fetchNeighborhoods = async (zone = '') => {
       const zoneName = zone.split(' ').join('');
       try {
         const { data } = await axios.get(`https://peaceful-bastion-02967.herokuapp.com/api/locations/${zoneName}`);
         const neighborhoodsArray = data.data;
-        console.log(neighborhoodsArray);
         setNeighborhoods(neighborhoodsArray);
       } catch (error) {
         alert(error);
@@ -151,7 +146,6 @@ const CreatePlace = ({ history }) => {
     });
   };
 
-  console.log(form);
   return (
     <Layout>
       <Wrapper>

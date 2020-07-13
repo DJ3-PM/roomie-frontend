@@ -27,8 +27,6 @@ const Header = () => {
     window.location.href = '/signin';
   };
 
-  console.log('isHost', typeof isHost);
-  console.log('isHost', isHost);
   return (
 
     <HeaderStyle>

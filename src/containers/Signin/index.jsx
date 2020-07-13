@@ -28,8 +28,6 @@ const Signin = () => {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     const { username, password } = form;
-    console.log('password', password);
-    console.log('username', username);
 
     try {
       const { data } = await axios({
@@ -41,7 +39,6 @@ const Signin = () => {
         },
       });
       const { profile, userId } = data.data;
-      console.log(data.data);
 
       activateIsHost(profile.isHost);
       activateAvatar(profile.avatar);
@@ -54,10 +51,9 @@ const Signin = () => {
       if (error.message === 'Request failed with status code 401') {
         errorMessage('Invalid credentials');
       } else {
-        errorMessage();
+        alert(error);
       };
     }
-
   };
 
   const handleTextInput = (event) => {

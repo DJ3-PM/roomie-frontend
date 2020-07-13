@@ -37,7 +37,6 @@ const Home = () => {
 
   const handleSearch = (event) => {
     const { target } = event;
-    console.log(slugify(target.value));
     const filteredPlaces = places.filter((place) => slugify(place.location).includes(slugify(target.value.trim())));
     setFilteredPlaces(filteredPlaces);
   };

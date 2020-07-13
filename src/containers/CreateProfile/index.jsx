@@ -54,7 +54,7 @@ const CreateProfile = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log('submit');
+
     const myDataForm = new FormData();
     Object.keys(form).forEach((entry) => {
       myDataForm.append(`${entry}`, form[entry]);
@@ -87,7 +87,6 @@ const CreateProfile = () => {
 
   };
 
-  console.log(form);
   return (
     <Layout>
       <Wrapper>
