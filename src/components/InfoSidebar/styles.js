@@ -8,6 +8,8 @@ export const Sidebar = styled.section`
      background: #ededed;
      margin: 30px;
      padding: 15px;
+     border-radius: 5px;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
      @media screen and (max-width: 768px) {
         flex-direction: column;
         padding: 15px;
