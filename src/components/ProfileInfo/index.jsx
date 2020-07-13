@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './styles';
 import PropTypes from 'prop-types';
 import { AiOutlineMail as Email } from 'react-icons/ai';
 import { FaWhatsapp } from 'react-icons/fa';

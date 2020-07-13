@@ -11,13 +11,13 @@ import InputCheck from '../../components/InputCheck';
 import TextArea from '../../components/TextArea';
 import FormButton from '../../components/FormButton';
 
-import userDefault from '../../assets/static/userDefault.svg';
+import defaultUser from '../../components/DefaultUser';
 
 import { Avatar } from './styles';
 
 const CreateProfile = () => {
-  const { userId } = useContext(Context);
-  const [profileImage, setProfileImage] = useState(userDefault);
+  const { userId, successMessage, errorMessage } = useContext(Context);
+  const [profileImage, setProfileImage] = useState(defaultUser);
 
   const [form, setForm] = useState({
     isHost: false,
@@ -70,11 +70,15 @@ const CreateProfile = () => {
     const sendDataForm = async () => {
       try {
         const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/profile', myDataForm, {});
-        alert(data.message);
+        successMessage(data.message);
         window.location.href = '/signin';
       } catch (error) {
         const { message } = error.response.data;
-        alert(message);
+        if (message === 'An internal server error occurred') {
+          errorMessage('Missing Data!');
+        } else {
+          errorMessage();
+        }
       }
 
     };

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { Context } from '../Context';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import Home from '../containers/Home';
@@ -12,6 +13,9 @@ import NotFound from '../containers/NotFound';
 import Favorites from '../containers/Favorites';
 import ViewProfile from '../containers/ViewProfile';
 
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure();
 const App = () => {
   const { userId } = useContext(Context);
   const { isHost } = useContext(Context);

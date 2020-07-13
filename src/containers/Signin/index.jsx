@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLock } from 'react-icons/fi';
+import { Link } from './styles';
 import { Context } from '../../Context';
 import Layout from '../../components/Layout';
 import Wrapper from '../../components/Wrapper';
@@ -22,6 +22,7 @@ const Signin = () => {
     activateProfileId,
     activateFirstname,
     activateLastname,
+    errorMessage,
   } = useContext(Context);
 
   const handleOnSubmit = async (event) => {
@@ -48,10 +49,13 @@ const Signin = () => {
       activateFirstname(profile.firstname);
       activateLastname(profile.lastname);
       activateUserId(userId);
-      alert('Sign in succesfully!');
 
     } catch (error) {
-      console.log(error);
+      if (error.message === 'Request failed with status code 401') {
+        errorMessage('Invalid credentials');
+      } else {
+        errorMessage();
+      };
     }
 
   };

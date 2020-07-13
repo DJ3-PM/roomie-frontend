@@ -15,8 +15,8 @@ import transformFilesToURLs from '../../utils/transformFilesToURLs';
 
 import { SectionTitle, CheckboxArranger } from './styles';
 
-const CreatePlace = () => {
-  const { profileId } = useContext(Context);
+const CreatePlace = ({ history }) => {
+  const { profileId, errorMessage, successMessage } = useContext(Context);
 
   const [form, setForm] = useState({
     profileId,
@@ -61,10 +61,15 @@ const CreatePlace = () => {
     const sendDataForm = async () => {
       try {
         const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/places', myDataForm, {});
-        alert(data.message);
+        successMessage(data.message);
+        history.push('/');
       } catch (error) {
         const { message } = error.response.data;
-        alert(message);
+        if (message === 'An internal server error occurred') {
+          errorMessage('Missing Data!');
+        } else {
+          errorMessage();
+        }
       }
 
     };
