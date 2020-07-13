@@ -9,6 +9,11 @@ This is an application that allows you to:
 
 ## Screens
 
+### Sign In Screen
+![Sign In Screen](https://github.com/DJ3-PM/roomie-frontend/blob/master/src/assets/static/Screen-Roomeate-SignIn.png)
+
+### Home Screen
+![Home Screen](https://github.com/DJ3-PM/roomie-frontend/blob/master/src/assets/static/Screen-Roomeate-Home.jpg)
 
 ## Documentation
 
