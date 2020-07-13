@@ -34,7 +34,6 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
-    "react-toastify": "^6.0.8",
     "sass-loader": "^8.0.2",
     "styled-components": "^5.1.1"
   },

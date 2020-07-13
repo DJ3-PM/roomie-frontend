@@ -1,12 +1,8 @@
 import React, { createContext, useState } from 'react';
-import { toast } from 'react-toastify';
 
 export const Context = createContext();
 
 const Provider = ({ children }) => {
-  // const [isHost, setIsHost] = useState(() => {
-  //   return window.sessionStorage.getItem('isHost') === 'true';
-  // });
 
   const [isHost, setIsHost] = useState(() => {
     if (window.sessionStorage.getItem('isHost') === null) {
@@ -89,12 +85,6 @@ const Provider = ({ children }) => {
     removeLastname: () => {
       window.sessionStorage.removeItem('lastname');
       setLastname(null);
-    },
-    errorMessage: (message = 'Something went wrong') => {
-      toast.error(message, { position: toast.POSITION.BOTTOM_RIGHT });
-    },
-    successMessage: (message = 'Success!') => {
-      toast.success(message, { position: toast.POSITION.BOTTOM_RIGHT });
     },
   };
 
