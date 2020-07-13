@@ -43,6 +43,7 @@ You can execute the following command:
 ```
 npm run build
 ```
+The project opens in [](http://localhost:8080/)
 
 ## Testing
 
@@ -57,7 +58,7 @@ npm test:coverage
 https://roomeate.vercel.app
 
 ## License
-Licensed under the MIT License.
+Licensed under the [MIT License](https://github.com/DJ3-PM/roomie-frontend/blob/master/LICENSE).
 
 ## Authors
 
