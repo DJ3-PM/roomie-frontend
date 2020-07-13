@@ -94,6 +94,9 @@ const Provider = ({ children }) => {
     errorMessage: (message = 'Something went wrong') => {
       toast.error(message, { position: toast.POSITION.BOTTOM_RIGHT });
     },
+    successMessage: (message = 'Success!') => {
+      toast.success(message, { position: toast.POSITION.BOTTOM_RIGHT });
+    },
   };
 
   return (
