@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './styles';
 import axios from 'axios';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLock } from 'react-icons/fi';
@@ -86,7 +86,7 @@ const Signin = () => {
           <Input name='password' onChange={handleTextInput} type='password' placeholder='Password' required />
           <p>
             Not an user yet?
-            <Link to='/signup'> Sing up</Link>
+            <Link to='/signup'> Sign up</Link>
           </p>
           <FormButton text='Sign in!' />
         </Form>

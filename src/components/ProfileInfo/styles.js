@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const Info = styled.div`
      display: flex;
@@ -37,3 +38,10 @@ export const ContactButton = styled.a`
      }
  `;
 
+export const Link = styled(RouterLink)`
+    color: black;
+    &:hover {
+        font-weight: bold;
+        color: var(--accent-color);
+    }
+`;
