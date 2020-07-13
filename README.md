@@ -49,8 +49,8 @@ The project listens on [](http://localhost:8080/)
 
 ```
 npm test
-npm test:watch
-npm test:coverage
+npm run test:watch
+npm run test:coverage
 ```
 
 ## Live Demo
