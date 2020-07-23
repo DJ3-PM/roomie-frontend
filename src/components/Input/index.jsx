@@ -1,6 +1,13 @@
 import React from 'react';
 import { Input, Label } from './style';
 
+
+// TODO:
+// Esto se puede solucionar con css
+// p::first-letter {
+//   text-transform: capitalize;
+// }
+// https://tympanus.net/codrops/css_reference/first-letter/
 const capitalize = (s) => {
   if (typeof s !== 'string') return '';
   return s.charAt(0).toUpperCase() + s.slice(1);

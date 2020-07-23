@@ -27,6 +27,9 @@ const Header = () => {
     window.location.href = '/signin';
   };
 
+  // TODO:
+  // La palabra Signout debe ser separada Sign out
+
   return (
 
     <HeaderStyle>

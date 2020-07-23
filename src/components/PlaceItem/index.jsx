@@ -8,6 +8,10 @@ import Modal from '../Modal';
 
 import { Item, Details, Button, Title, Image, ImageContainer, Price, Location, Link } from './styles';
 
+// TODO:
+
+// No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+// algún momento llega a cambiar debe ir método por método cambiando la URL.
 const PlaceItem = ({ _id, mainImage, name, location, price, isFavorite = false, modalIsOpen, openModal, closeModal, history, setFavorites }) => {
   const { profileId, userId } = useContext(Context);
   const [show, element] = useNearScreen();

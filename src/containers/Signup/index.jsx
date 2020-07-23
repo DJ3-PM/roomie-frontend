@@ -21,6 +21,10 @@ const Signup = () => {
     const { username, password } = form;
 
     try {
+      // TODO:
+
+      // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+      // algún momento llega a cambiar debe ir método por método cambiando la URL.
       const { data } = await axios.post('https://peaceful-bastion-02967.herokuapp.com/api/auth/sign-up', {
         username,
         password,
@@ -42,6 +46,10 @@ const Signup = () => {
       [target.name]: target.value,
     });
   };
+
+  // TODO:
+  // En el template Signin no es una palabra que vaya unida es Sign in
+
 
   return (
     <Layout title='Sign up!' description='Sign up'>

@@ -29,6 +29,10 @@ const Signin = () => {
     const { username, password } = form;
 
     try {
+      // TODO:
+
+      // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+      // algún momento llega a cambiar debe ir método por método cambiando la URL.
       const { data } = await axios({
         url: 'https://peaceful-bastion-02967.herokuapp.com/api/auth/sign-in',
         method: 'post',
