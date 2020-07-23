@@ -6,6 +6,11 @@ const useFetchPlace = ({ placeId }) => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // TODO:
+
+  // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+  // algún momento llega a cambiar debe ir método por método cambiando la URL.
+
   useEffect(() => {
     const fetchPlace = async () => {
       setLoading(true);

@@ -26,6 +26,13 @@ const CreatePlace = ({ history }) => {
   const [zones, setZones] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
 
+  // TODO:
+  // Este tipo de effects deberían estar como custom hooks, de esta manera
+  // puede re usar esta función de obtener las locations en otro componente a futuro
+
+
+  // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+  // algún momento llega a cambiar debe ir método por método cambiando la URL.
   useEffect(() => {
     const fetchLocations = async () => {
       try {
@@ -55,6 +62,13 @@ const CreatePlace = ({ history }) => {
         myDataForm.append(`${entry}`, form[entry]);
       }
     });
+
+    // TODO:
+
+    // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+    // algún momento llega a cambiar debe ir método por método cambiando la URL.
+
+    // No se esta usando la variable {data}
 
     const sendDataForm = async () => {
       try {
@@ -122,6 +136,11 @@ const CreatePlace = ({ history }) => {
       location: target.value,
     });
 
+    // TODO:
+
+    // No es buena practica tener la url del backend directamente en el código ya que si en
+    // algún momento llega a cambiar debe ir método por método cambiando la URL.
+
     const fetchNeighborhoods = async (zone = '') => {
       const zoneName = zone.split(' ').join('');
       try {
@@ -137,6 +156,13 @@ const CreatePlace = ({ history }) => {
 
   };
 
+  // TODO:
+
+  // No es buena práctica ir directamente a un array[0] antes verificar si esto
+  // existe hacer .split(',')[0] puede causar errores mejorar verificar que
+  // form.location no es undefined o null antes de hacer la operación
+
+
   const handleSecondSelectInput = (event) => {
     const { target } = event;
     setForm({
@@ -144,6 +170,10 @@ const CreatePlace = ({ history }) => {
       location: `${form.location.split(',')[0]}, ${target.value}`,
     });
   };
+
+  // TODO:
+
+  // En el template esta mal escrito la palabra `caracteristics`
 
   return (
     <Layout>

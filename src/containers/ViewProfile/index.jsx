@@ -18,6 +18,10 @@ const useFetchProfile = ({ profileId }) => {
     const fetchProfileData = async () => {
       try {
         setLoading(true);
+        // TODO:
+
+        // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+        // algún momento llega a cambiar debe ir método por método cambiando la URL.
         const { data } = await axios.get(`https://peaceful-bastion-02967.herokuapp.com/api/profile/${profileId}`);
         setProfile(data.data);
         setLoading(false);

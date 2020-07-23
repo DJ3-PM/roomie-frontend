@@ -15,6 +15,10 @@ const ViewRoom = ({ match }) => {
   const { place, images, loading } = useFetchPlace({ placeId });
   const { name, description, profileId: profile } = place;
 
+  // TODO:
+
+  // Es mala práctica tener un componente dentro de otro, en este caso se podría
+  // acoplar a un solo component o si son dos deben tener diferentes archivos.
   const renderHomeView = () => {
     return (
       <>

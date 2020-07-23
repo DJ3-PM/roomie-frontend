@@ -17,11 +17,20 @@ const Home = () => {
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  // TODO:
+
+  // Se debería tener un custom hook para las peticiones así si algún otro
+  // componente quiere usar este método no se escribe la función de nuevo
+
   useEffect(() => {
     const fetchPlaces = async () => {
       setLoading(true);
 
       try {
+        // TODO:
+
+        // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+        // algún momento llega a cambiar debe ir método por método cambiando la URL.
         const { data } = await axios.get('https://peaceful-bastion-02967.herokuapp.com/api/places');
         const places = data.data;
         setPlaces(places);
@@ -34,6 +43,15 @@ const Home = () => {
 
     fetchPlaces();
   }, []);
+
+  // TODO:
+
+  // El método de búsqueda filtra los lugares cada que haya un cambio el input
+  // si bien funciona es mala práctica sin tener en cuenta un debounce time
+  // que básicamente es esperar a que el usuario termine de escribir y no ejecutar
+  // el método por cada tecla que oprime el usuario, aquí no hay tanto riesgo pero
+  // pero si la búsqueda se hace hacia un API baja el rendimiento
+  // https://dev.to/gabe_ragland/debouncing-with-react-hooks-jci
 
   const handleSearch = (event) => {
     const { target } = event;

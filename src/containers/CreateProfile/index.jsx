@@ -56,6 +56,7 @@ const CreateProfile = () => {
     event.preventDefault();
 
     const myDataForm = new FormData();
+
     Object.keys(form).forEach((entry) => {
       myDataForm.append(`${entry}`, form[entry]);
     });
@@ -66,6 +67,13 @@ const CreateProfile = () => {
       myDataForm.delete('contactEmail');
       myDataForm.delete('about');
     }
+
+    // TODO:
+
+    // No es buena práctica tener la url del backend directamente en los components/containers ya que si en
+    // algún momento llega a cambiar debe ir método por método cambiando la URL.
+
+    // no se usa { data }
 
     const sendDataForm = async () => {
       try {

@@ -1,4 +1,4 @@
-/* eslint-disable  */
+  /* eslint-disable  */
 function slugify(str) {
   const map = {
     '-': ' ',

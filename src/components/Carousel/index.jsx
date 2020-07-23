@@ -12,6 +12,18 @@ const Carousel = ({ images = [] }) => {
     setMainImage(images[target.id]);
   };
 
+  // TODO:
+  // Por cada click se hace una búsqueda de en que posición esta la imagen `mainImage`
+  // una forma sería guardar la posición de la imagen actual y solo incrementar o decrementar
+  // let newPosition = 0;
+  // const handleLeft = () => {
+  //   if (newPosition >= 0) {
+  //     newPosition--;
+  //   }
+  //   setMainImage(images[newPosition]);
+  // };
+
+
   // This could be improved...
   const handleLeft = () => {
     let newPosition = images.indexOf(mainImage) - 1;
